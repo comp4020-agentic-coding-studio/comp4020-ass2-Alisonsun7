@@ -106,3 +106,51 @@ caught it. A new spec test now asserts every session and person has a
 non-empty `related` list in the built API.
 
 `pnpm check` and `pnpm check:evidence` are green as of this file.
+
+## Third pass: depth over breadth, and two more lectures
+
+The course had passed both prior QA sweeps but still read thin in places —
+every week had a core question and a couple of concept sections, but nothing
+that told a marker what a student was actually meant to walk away able to
+do, and only Weeks 1–3 had a matching lecture. This pass added structure,
+not new pages for their own sake:
+[`18d7538`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/18d7538)
+gives all 12 weeks four new sections each (Learning outcomes, Before class,
+In class, What you should leave knowing), tailored to that week's own
+mechanism rather than a repeated template — Week 2's outcomes are about unit
+price, Week 6's are about demand-sensitive versus personalised pricing, and
+so on — plus one new `spec:` line per week reflecting the added structure.
+
+[`c029426`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/c029426)
+and
+[`6eb9edc`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/6eb9edc)
+add Lecture 3 (Week 4, CALCULATE stage) and Lecture 4 (Week 10, DECIDE
+stage), each with a real 24-slide deck built the same way as the existing
+Week 1 deck — worked examples, a formula slide, an in-class challenge and
+solution walkthrough, not a slide-per-heading restatement of the week page.
+The course now has lecture coverage across all three stages instead of just
+SEE.
+
+[`1a24e3d`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/1a24e3d)
+wires the new lectures into the rest of the site (the Lectures index, both
+assessments, and Idris Fenn's staff page) and adds
+`spec/content-depth.test.ts`. Writing that test caught a real gap rather
+than a hypothetical one: it asserts the literal word "hypothetical" appears
+on every page that relies on invented numbers, and Week 10's session page
+failed it — the $249-headphones continuation described a "usually goes on
+sale" scenario without ever using that word, unlike Weeks 5 and 6, which
+already had it from the previous pass. Fixed in the same commit by rewording
+the paragraph, then re-ran `pnpm check` to confirm.
+
+Verifying the two new decks for slide overflow needed a step past the
+iframe-harness technique described earlier in this file, since a static
+screenshot of a Reveal.js deck only ever shows the currently-visible slide.
+Instead I opened each deck through the Chrome DevTools Protocol, forced the
+device metrics to both marking viewports, stepped through every slide via
+its `#/N` hash, and read `scrollHeight`/`scrollWidth` against
+`clientHeight`/`clientWidth` directly from the DOM — 48 checks in total (2
+decks × 24 slides × 2 viewports), all clean. The same session confirmed zero
+horizontal overflow on the Lectures page, Week 4, Week 6 and Week 10 at both
+1920px and 390px.
+
+`pnpm check` and `pnpm check:evidence` are green as of this file.
