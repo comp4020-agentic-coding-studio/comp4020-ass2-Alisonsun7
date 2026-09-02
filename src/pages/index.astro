@@ -3,44 +3,57 @@ import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import heroImage from "../assets/images/hero-home.avif";
+import PriceChallenge from "../components/interactive/PriceChallenge.astro";
 import { courseMeta } from "../course-config";
 import { sessionLabels, siteConfig } from "../site-config";
-
-// STARTER_CONTENT: replace the hero artwork and its alt text below, then
-// remove this comment.
 ---
 
 <ContentLayout
   title={`${courseMeta.code}: ${courseMeta.title}`}
   description={courseMeta.description}
   heroImage={heroImage}
-  heroImageAlt="A lecture theatre reduced to flat gold and black shapes, rows of seats sweeping past the frame, in a two-ink risograph print"
+  heroImageAlt="Hero graphic reading HOW TO NEVER PAY, FULL PRICE struck through, THE WRONG PRICE, beside a price tag showing $249 struck through and $189"
   {...siteConfig}
 >
   <ul class="course-tags" aria-label="Course tags">
     {courseMeta.tags.map((tag) => <li>{tag}</li>)}
   </ul>
 
-  <!-- STARTER_CONTENT: replace the authored page below, then remove this comment. -->
+  <p class="tagline">You calculate the price. The price calculates you.</p>
+
+  <PriceChallenge />
+
   <h2>What you will do</h2>
   <p>
-    Say what a student spends their time on — the making, reading, arguing or
-    measuring that fills the weeks. Name the artefact they walk out with.
+    Twelve weeks, one recurring purchase — a pair of $249 headphones — and one
+    running argument: the sticker price is a starting point, not an answer.
+    Each week adds a piece students learn to price properly: quantity,
+    discounts, coupon rules, price history, context-dependent pricing,
+    subscriptions, loyalty points, alternatives to buying new, the value of
+    waiting, and the value of your own time. Three assessments ask students to
+    apply this to a real promotion, a constrained shopping scenario, and
+    finally a decision-support system they build and can explain.
   </p>
 
   <h2>Who it is for</h2>
   <p>
-    Say who this is aimed at and what they need to already know. Be specific
-    enough that someone can rule themselves in or out without emailing you.
+    Anyone who has stared at a "50% OFF" badge and wondered what number it's
+    actually 50% of. No finance background is assumed — the mathematics stays
+    at the level of percentages, averages and basic probability. What's
+    assumed is a willingness to distrust a sticker price on purpose, and to
+    show the working behind why.
   </p>
 
   <h2>Where to go next</h2>
   <CardGrid columns={2}>
     <Card title={sessionLabels.plural} href="/sessions/">
-      <p>The weekly schedule and what happens in each teaching session.</p>
+      <p>All twelve teaching weeks, in order, each building on the last.</p>
     </Card>
     <Card title="Assessment" href="/assessments/">
       <p>What is marked, what it is worth, and when it is due.</p>
+    </Card>
+    <Card title="Lectures" href="/lectures/">
+      <p>Lecture outlines, including a full slide deck for Week 1.</p>
     </Card>
     <Card title="People" href="/people/">
       <p>Who teaches the course and how to reach them.</p>
@@ -53,7 +66,7 @@ import { sessionLabels, siteConfig } from "../site-config";
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-block: 0 2rem;
+    margin-block: 0 1rem;
     padding: 0;
     list-style: none;
   }
@@ -64,5 +77,11 @@ import { sessionLabels, siteConfig } from "../site-config";
     color: var(--at-text-secondary);
     background: var(--at-bg-alt);
     font-size: 0.9rem;
+  }
+
+  .tagline {
+    font-style: italic;
+    color: var(--at-text-secondary);
+    margin-block-end: 2rem;
   }
 </style>

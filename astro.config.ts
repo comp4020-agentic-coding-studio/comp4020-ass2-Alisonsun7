@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import { defineConfig } from "astro/config";
 import courseGraph from "astro-course-university";
 import universityTheme from "astro-theme-university";
@@ -8,6 +9,11 @@ import { gitOrigin, resolveDeployment } from "./scripts/pages-base.ts";
 
 // Derived, never hardcoded --- see scripts/pages-base.ts for why.
 const { site, base } = resolveDeployment(process.env, gitOrigin);
+
+// An absolute path, since brandCss specs are imported as-is: a bare
+// specifier resolves as a package (like the slop palette below), so our own
+// stylesheet needs a path Vite can resolve directly on disk.
+const visualIdentityCss = fileURLToPath(new URL("./src/styles/visual-identity.css", import.meta.url));
 
 export default defineConfig({
   site,
@@ -22,7 +28,7 @@ export default defineConfig({
       defaultLayout: "src/layouts/PageLayout.astro",
       // The whole brand choice: three colour tokens and a set of lockups. Keep
       // institutional brand packages and assets out of this fictional site.
-      brandCss: "astro-theme-slop/slop.css",
+      brandCss: ["astro-theme-slop/slop.css", visualIdentityCss],
       imageFormat: "avif",
       llmsTxt: true,
       // The theme owns the markdown plugin chain, so astromotion's slide

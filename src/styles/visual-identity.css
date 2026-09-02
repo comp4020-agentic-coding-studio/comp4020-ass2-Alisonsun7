@@ -1,0 +1,39 @@
+/* Site-wide receipt / price-tag visual identity, loaded alongside the
+ * astro-theme-slop brand palette (see astro.config.ts's `brandCss`). Adds a
+ * small set of restrained utility classes — a struck-through reference
+ * price, a monospace "now" price, a receipt-style tear divider, and
+ * small-print caveats — rather than overriding the theme's own components.
+ * Derives everything from the existing --at-* tokens so it tracks the brand
+ * palette (and dark mode) automatically.
+ */
+
+.price-was {
+  font-family: var(--at-font-mono);
+  color: var(--at-text-muted);
+  text-decoration: line-through;
+}
+
+.price-now {
+  font-family: var(--at-font-mono);
+  font-weight: 700;
+  color: var(--at-text);
+}
+
+.price-now--good {
+  color: var(--at-success);
+}
+
+.receipt-divider {
+  margin-block: var(--at-spacing-xl);
+  border: none;
+  border-top: 1px dashed var(--at-border);
+}
+
+.caveat {
+  font-size: var(--at-font-size-xs);
+  color: var(--at-text-muted);
+}
+
+.caveat::before {
+  content: "* ";
+}

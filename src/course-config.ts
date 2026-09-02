@@ -53,11 +53,9 @@ export const courseMeta = slopCourseMetaSchema.parse({
   startDate: "2026-07-27",
   endDate: "2026-10-30",
   description:
-    "A semester-long dismantling of the sticker price. Twelve weeks tracing " +
-    "one purchase — a pair of $249 headphones — through discounts, unit " +
-    "pricing, coupons, price history, dynamic pricing, subscriptions, " +
-    "loyalty points, and the question of whether to buy now or wait, " +
-    "ending with the uncomfortable conclusion that the lowest number is not " +
-    "always the best decision.",
+    "A semester-long dismantling of the sticker price. Twelve weeks trace " +
+    "one purchase — $249 headphones — through discounts, unit pricing, " +
+    "coupons, price history, dynamic pricing and subscriptions, ending " +
+    "with a rule: the lowest number is not always the best decision.",
   tags: ["pricing", "consumer behaviour", "decision-making"],
 }) satisfies CourseMetaInput;
