@@ -45,6 +45,9 @@ to unlock a bigger advertised discount, should not be counted as "saving
 money" unless you can show the item had real value to you independent of
 the coupon.
 
+This assessment is [Week 4](/sessions/week-04/)'s rule-as-function reasoning
+applied under exam conditions rather than in a worked example.
+
 ## What you submit
 
 Either a written strategy comparison (tables of the modelled options and

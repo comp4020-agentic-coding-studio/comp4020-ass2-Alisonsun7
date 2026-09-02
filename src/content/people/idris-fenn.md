@@ -9,6 +9,8 @@ email: idris.fenn@slop.university
 contact: Ask during sessions, or email when a question cannot wait until the next one.
 related:
   - lectures/week-02
+  - lectures/week-04
+  - lectures/week-10
   - assessments/beat-the-shopping-cart
   - sessions/week-12
 ---

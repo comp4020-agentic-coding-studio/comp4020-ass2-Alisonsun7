@@ -58,12 +58,13 @@ explicitly rather than ignore them because they're hard to quantify.
 
 ## The $249 headphones
 
-A shopper hears that this model "usually" goes on sale around a known annual
-event, six weeks away. That's a genuine input — a probability and a rough
-discount size can be estimated from it — but it is not a promise. Week 11
-turns this exact situation into a calculator: given a price, a rough
-probability, a rough discount size, and how much the wait itself would cost,
-should this shopper wait or buy today?
+Hypothetically: a shopper hears that this model "usually" goes on sale
+around a known annual event, six weeks away. That's a genuine input — a
+probability and a rough discount size can be estimated from it — but it is
+not a promise, and this course makes no claim about any real product's
+actual future price. Week 11 turns this exact situation into a calculator:
+given a price, a rough probability, a rough discount size, and how much the
+wait itself would cost, should this shopper wait or buy today?
 
 ## Learning outcomes
 

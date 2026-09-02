@@ -22,6 +22,7 @@ spec:
   - shows the reasoning behind the recommendation, not only the recommendation itself
   - does not claim to produce a universally correct answer
 related:
+  - sessions/week-10
   - sessions/week-12
 ---
 
@@ -49,6 +50,11 @@ reasonable systems, given the same inputs but different assumptions about
 risk or the value of time, may recommend different things — the mark is on
 whether each system's own reasoning is transparent and internally
 consistent, not on whether it agrees with any other system.
+
+The expected-value reasoning for the WAIT recommendation comes directly from
+[Week 10](/sessions/week-10/), and the whole engine is the synthesis
+[Week 12](/sessions/week-12/) argues for: a decision that shows its work
+rather than a single number.
 
 ## What you submit
 
