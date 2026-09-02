@@ -1,9 +1,5 @@
 # Process overview
 
-<!-- TEMPLATE: this file is a shape to fill in, not a form. Replace everything
-     in it with your own overview, and delete this comment — `pnpm
-     check:evidence` will remind you if it's still here. -->
-
 Written by you, for a reader: how you got from the brief to the harness and
 agentic workflow behind this submission. Markers read this file and follow its
 citations; they don't trawl the repo for evidence you didn't point at.
@@ -16,38 +12,57 @@ cover every deliverable.
 
 ## What I built
 
-One paragraph: the thing, and the idea behind it.
+**How to Never Pay Full Price** (SLOP3746): a 12-week fictional SlopU course
+that runs one purchase — a pair of $249 headphones — through a SEE →
+CALCULATE → DECIDE arc, three assessments weighted 20/30/50, a real Week 1
+slide deck, and three interactive tools built deep rather than many built
+shallow: a homepage reference-price challenge, a Week 2 unit-price calculator
+that separates "cheapest per pack unit" from "cheapest per unit you'll
+actually use," and a Week 11 buy-or-wait tool that deliberately collects hours
+already spent researching and then ignores them, to make the sunk-cost point
+land as an interaction rather than a paragraph.
 
 ## How I got here
 
-The account of the process: how the work actually went, and how you knew the
-result was right. Tell it in whatever order makes it clear. A weekly prototype
-needs a paragraph or two; an assignment needs more.
+The starter repo arrived as a working but generic course template — I read
+`package.json`, `src/content.config.ts` and `scripts/check-evidence.ts` before
+writing anything, since the brief warned against inventing commands or
+schemas the repo doesn't have. I scoped the interactive work early: three
+polished tools over six shallow ones, and code-generated hero/card art via
+`sharp` (already a dependency) rather than fabricated stock photos, with the
+two staff photos removed outright rather than faked —
+[`5e8b5ae`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/5e8b5ae)
+lays down all twelve weeks, both lectures, the deck, all three assessments and
+the people pages together, and
+[`270c994`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/270c994)
+adds the generated art and real homepage/policies copy.
 
-Cite the record as you go, as links whose text is the commit hash or range and
-whose target is this repo's commit or compare URL, so a reader clicks straight
-to the evidence:
+Two real snags came out of that second commit. `course-config.ts`'s schema
+caps the course description at 300 characters; my first draft was 329, and
+`astro check` caught it before it ever reached a browser. More instructively,
+I initially added the receipt/price-tag CSS as a `<style is:global>` block in
+`src/layouts/PageLayout.astro`, assuming "the page layout" was global — a
+`grep` for its usage showed it only backs loose MDX pages like `/policies/`,
+while session/lecture/assessment/people routes use `ContentLayout` directly.
+I moved the stylesheet to `src/styles/visual-identity.css` and registered it
+through `brandCss` in `astro.config.ts`, which the theme injects into every
+page.
 
-- one commit: [`a1b2c3d`](https://github.com/YOUR-ORG/YOUR-REPO/commit/a1b2c3d)
-- a range:
-  [`a1b2c3d...e4f5a6b`](https://github.com/YOUR-ORG/YOUR-REPO/compare/a1b2c3d...e4f5a6b)
+[`c692d3e`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/c692d3e)
+adds `spec/curriculum-integrity.test.ts` alongside the starter's
+`data-integrity` test: exactly 12 unique weeks, assessment weights summing to
+100, the assigned course code, at least one lecture with slides, and
+`buildsOn` only ever pointing backwards.
 
-To pair a prompt with the commit it produced, quote the prompt (curated, not a
-full transcript) next to the citation:
+Manual review at both marking viewports — desktop, and a 390×844 iframe
+harness verified against a media-query probe before I trusted it, per this
+repo's carried-forward Crit 5 notes — surfaced two real bugs fixed in
+[`ec94ccd`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-Alisonsun7/commit/ec94ccd):
+the hero image baked in its own headline text, which collided with the
+theme's own overlaid page title once the image was cropped to the hero
+band's actual height; and `sessions/[slug].astro` built page titles as
+`Week N Week: <title>`, doubling up since every session title already opens
+with "Week N — ". Both were only visible by actually rendering the site, not
+by reading the code.
 
-> the prompt, verbatim
-
-Screenshots are welcome where one carries the point better than a sentence does.
-Commit the file to this repo and link it with a **relative** path, which is what
-makes it render on GitHub: `![alt text](docs/before.png)`. Images don't count
-towards the word count and don't replace the citation.
-
-## Before you ship
-
-`pnpm check:evidence` verifies that this comment is gone, that your citations
-resolve to real commits, that a crit week's reflection entry is in
-`reflections/`, and that your `CLAUDE.md` is there. It checks that your account
-is traceable, not that it is good: that is the marker's call.
-
-Images aren't checked: unlike a citation whose SHA doesn't resolve, a broken
-image is visible the moment this file is rendered on GitHub.
+`pnpm check` and `pnpm check:evidence` are green as of this file.
