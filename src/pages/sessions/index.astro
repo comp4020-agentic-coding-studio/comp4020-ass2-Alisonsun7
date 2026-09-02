@@ -1,5 +1,6 @@
 ---
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { withBase } from "astro-theme-university/url";
 import SessionsGrid from "../../components/SessionsGrid.astro";
 import { sessionLabels, siteConfig } from "../../site-config";
 ---
@@ -10,9 +11,13 @@ import { sessionLabels, siteConfig } from "../../site-config";
   {...siteConfig}
 >
   <p>
-    The internal collection and URL stay <code>sessions</code>. Set the visible
-    singular and plural names once in <code>src/site-config.ts</code> and use
-    the language your course deserves everywhere readers see it.
+    Twelve weeks in a fixed order, each building on at least one earlier one
+    (see each week's <code>buildsOn</code>). The arc runs SEE (Weeks 1–3, what
+    "price" actually means) into CALCULATE (Weeks 4–9, modelling discounts,
+    time, context and alternatives) into DECIDE (Weeks 10–12, weighing
+    uncertainty, time and values against a number). Start at{" "}
+    <a href={withBase("/sessions/week-01/")}>Week 1</a> if you're new here — the $249
+    headphones example introduced there runs through every week after it.
   </p>
   <SessionsGrid />
 </ContentLayout>
