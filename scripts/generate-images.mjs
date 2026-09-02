@@ -52,25 +52,26 @@ function priceTag({ cx, cy, scale }) {
 }
 
 function heroSvg(width, height) {
+  // The theme overlays its own page-title <h1> across the bottom of whatever
+  // band survives object-fit: cover cropping, which on this template's short
+  // hero container keeps only a wide horizontal slice near the vertical
+  // centre --- not the full 2560x1086 canvas. Baking a competing headline into
+  // this art collided with that overlaid title, so this stays a plain motif
+  // (stripes + a single price tag, both centred vertically) and lets the real
+  // heading do the talking.
+  const midline = height / 2;
   return `
   <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
     <rect width="${width}" height="${height}" fill="${CREAM}" />
-    ${barcodeStripes(60, 60, height - 120, 90, 7)}
-    ${barcodeStripes(width - 560, 60, height - 120, 60, 42)}
+    ${barcodeStripes(0, 0, height, 140, 7)}
+    ${barcodeStripes(width - 720, 0, height, 100, 42)}
 
-    <text x="140" y="360" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="108" fill="${INK}">HOW TO NEVER PAY</text>
-    <text x="140" y="480" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="108" fill="${GREY}"
-          text-decoration="line-through">FULL PRICE</text>
-    <text x="140" y="600" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="108" fill="${GOLD}">THE WRONG PRICE</text>
+    <line x1="0" y1="${midline - 150}" x2="${width}" y2="${midline - 150}" stroke="${GREY}" stroke-width="3"
+          stroke-dasharray="14 10" opacity="0.5" />
+    <line x1="0" y1="${midline + 150}" x2="${width}" y2="${midline + 150}" stroke="${GREY}" stroke-width="3"
+          stroke-dasharray="14 10" opacity="0.5" />
 
-    <text x="140" y="680" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="34" fill="${BRONZE}">
-      You calculate the price. The price calculates you.
-    </text>
-
-    <line x1="80" y1="${height - 90}" x2="${width - 80}" y2="${height - 90}" stroke="${GREY}" stroke-width="3"
-          stroke-dasharray="14 10" opacity="0.6" />
-
-    ${priceTag({ cx: width - 420, cy: height / 2 - 40, scale: 1.35 })}
+    ${priceTag({ cx: width - 420, cy: midline, scale: 1.35 })}
   </svg>`;
 }
 
