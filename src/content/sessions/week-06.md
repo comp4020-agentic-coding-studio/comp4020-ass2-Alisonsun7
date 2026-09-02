@@ -13,7 +13,8 @@ spec:
   - distinguishes demand-sensitive pricing from personalised pricing
   - discusses dynamic pricing without attributing specific practices to a named real company
   - explains price discrimination as a pricing concept, not as a legal accusation
-related: []
+related:
+  - sessions/week-07
 ---
 
 ## Core question
@@ -48,7 +49,9 @@ This course does not claim to know which real platforms use which of these
 mechanisms, or when. Specific, unverifiable claims about a named company's
 internal pricing system are exactly the kind of statement this course must
 avoid fabricating. Where a mechanism needs illustrating, the example is
-built from a **hypothetical** storefront, clearly marked as such.
+built from a **hypothetical** storefront, clearly marked as such — see
+[Policies](/policies/#hypothetical-vs-sourced-examples) for the course-wide
+rule this follows.
 
 ## Why it matters for a buyer
 

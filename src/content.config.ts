@@ -85,6 +85,7 @@ export const collections = {
           photo: image().optional(),
           photoAlt: z.string().trim().optional(),
           published: z.coerce.boolean().default(true),
+          related: z.array(z.string()).default([]),
         })
         .superRefine((person, ctx) => {
           if (person.photo && !person.photoAlt) {

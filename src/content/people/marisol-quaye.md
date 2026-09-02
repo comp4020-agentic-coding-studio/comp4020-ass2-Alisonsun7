@@ -7,6 +7,9 @@ affiliation: Slop University School of Invented Disciplines
 role: convenor
 email: marisol.quaye@slop.university
 contact: Email for course-level questions; use the weekly session for feedback on work.
+related:
+  - lectures/week-01
+  - sessions/week-12
 ---
 
 Marisol designed How to Never Pay Full Price after noticing that most

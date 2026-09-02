@@ -7,6 +7,10 @@ affiliation: Slop University School of Invented Disciplines
 role: tutor
 email: idris.fenn@slop.university
 contact: Ask during sessions, or email when a question cannot wait until the next one.
+related:
+  - lectures/week-02
+  - assessments/beat-the-shopping-cart
+  - sessions/week-12
 ---
 
 Idris teaches the even-numbered weeks, which is most of the course's

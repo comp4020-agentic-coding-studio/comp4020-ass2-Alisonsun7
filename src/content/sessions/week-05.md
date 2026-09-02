@@ -14,7 +14,8 @@ spec:
   - represents price as a function of time, not a single fixed value
   - distinguishes a median baseline from a single historical reference price
   - explains why a hypothetical price series must be labelled as hypothetical
-related: []
+related:
+  - sessions/week-06
 ---
 
 ## Core question
@@ -46,7 +47,9 @@ This course does not have access to a real retailer's historical pricing
 data, and inventing a chart that looks like one would misrepresent it as
 evidence. Any price series used for teaching in this course is explicitly
 labelled **hypothetical** — a plausible shape used to demonstrate the
-reasoning, not a claim about what any real product has cost.
+reasoning, not a claim about what any real product has cost. See
+[Policies](/policies/#hypothetical-vs-sourced-examples) for how this course
+draws that line generally.
 
 ## The $249 headphones
 

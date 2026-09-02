@@ -13,7 +13,8 @@ spec:
   - computes an annualised cost from a recurring charge, not just the per-period figure
   - explains inertia and cancellation friction as distinct mechanisms
   - reuses the usable-quantity idea from Week 2 to define cost per actual use
-related: []
+related:
+  - sessions/week-08
 ---
 
 ## Core question

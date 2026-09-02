@@ -13,7 +13,8 @@ spec:
   - compares at least three transaction types, not only price variants of the same one
   - defines lifecycle cost as more than the upfront purchase price
   - relates depreciation and resale value to the net cost of ownership
-related: []
+related:
+  - sessions/week-10
 ---
 
 ## Core question

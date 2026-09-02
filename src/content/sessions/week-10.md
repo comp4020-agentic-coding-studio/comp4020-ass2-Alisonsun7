@@ -13,7 +13,8 @@ spec:
   - defines expected value in terms of probability and size of a future discount
   - names stock-out risk and urgency as costs of waiting, not just as inconveniences
   - explicitly avoids claiming that future prices can be predicted with certainty
-related: []
+related:
+  - sessions/week-11
 ---
 
 ## Core question
