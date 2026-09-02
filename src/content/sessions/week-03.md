@@ -13,6 +13,7 @@ spec:
   - defines reference price and distinguishes it from market price
   - explains anchoring in terms of the reference-price mechanism, not just by name
   - states that discount percentage and money saved are not interchangeable
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - lectures/week-02
   - assessments/deal-autopsy
@@ -66,6 +67,38 @@ what the market has accepted for this item. If $349 is a number invented for
 the tag, the "$100 off" claim is measuring against fiction, and $249 must be
 judged on its own, against other headphones at or near $249 — not against a
 number the retailer chose to make $249 look generous.
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- define reference price and distinguish it from market price
+- explain anchoring as a mechanism, not just name it
+- classify a reference price as genuine, rarely-real, or invented
+- compute money saved from a percentage discount, not just quote the
+  percentage
+- explain why two discounts of equal percentage can save very different
+  amounts of money
+
+## Before class
+
+Find one "X% off" claim — a website, an email, a physical tag — and note
+both the percentage and the reference price it's measured against. If you
+can't find the reference price anywhere near the badge, note that too; that
+absence is itself data.
+
+## In class
+
+Take the discount you brought. As a group, sort it into "genuine baseline",
+"rarely-real baseline" (a manufacturer's suggested price nobody actually
+charges), or "no traceable origin" — and say what evidence would move it up
+or down that scale.
+
+## What you should leave knowing
+
+"X% off" is a ratio, and a ratio is only informative once you trust its
+denominator; percentage-off and money-saved are different numbers, and a
+badge only ever prints one of them.
 
 ## Where this goes
 

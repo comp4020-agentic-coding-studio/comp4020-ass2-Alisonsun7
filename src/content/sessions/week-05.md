@@ -14,6 +14,7 @@ spec:
   - represents price as a function of time, not a single fixed value
   - distinguishes a median baseline from a single historical reference price
   - explains why a hypothetical price series must be labelled as hypothetical
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - sessions/week-06
 ---
@@ -41,6 +42,12 @@ to $299 once is a very different object from a price that has bounced
 between $220 and $310 all year. The single number "$249" cannot distinguish
 these; the series can.
 
+> **Rule of thumb:** if a price has spent most of a recent window within
+> about 10% of its median, treat a same-range number as ordinary; treat
+> anything further out, in either direction, as worth asking why. This is a
+> classroom heuristic for judging a single price against a short history, not
+> a statistical guarantee.
+
 ## Hypothetical vs sourced
 
 This course does not have access to a real retailer's historical pricing
@@ -60,6 +67,39 @@ shape, $249 reads as an ordinary day, not a deal and not a markup — which is
 a more useful judgement than anything a single "was $329" badge could
 provide. (This series is invented for the example; treat it as
 illustrative, not as a real sales record for any real product.)
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- represent price as a function of time, `P(t)`, rather than a fixed value
+- distinguish a baseline built from a single historical price from a median
+  over a longer window
+- explain what volatility tells you that a single number cannot
+- identify why an invented price series must be explicitly labelled
+  hypothetical
+- apply the rule of thumb above to judge whether a price is typical or an
+  outlier, given a short history
+
+## Before class
+
+If you have access to any price-tracking tool, browser history, or your own
+memory of checking a price more than once, sketch — even roughly — what a
+chart of that item's price over the last few months would look like. If you
+don't have real data, that's fine; note that you don't, and why treating a
+guess as evidence would be a mistake.
+
+## In class
+
+Given the hypothetical six-month headphones series below, decide: is
+today's price closer to the median, or is it an outlier? State the rule of
+thumb you used to decide, not just the answer.
+
+## What you should leave knowing
+
+A single price is one sample from a series; a fair judgement about whether
+it's a good number requires the series, or an honest admission that the
+series isn't available.
 
 ## Where this goes
 

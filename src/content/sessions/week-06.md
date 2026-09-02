@@ -13,6 +13,7 @@ spec:
   - distinguishes demand-sensitive pricing from personalised pricing
   - discusses dynamic pricing without attributing specific practices to a named real company
   - explains price discrimination as a pricing concept, not as a legal accusation
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - sessions/week-07
 ---
@@ -69,6 +70,42 @@ logged in, and again from a friend's laptop in an incognito window, and sees
 $239 the second time. Nothing about the product changed. What changed is
 which inputs the price function received — and the $10 difference is data
 about the pricing system, not about the headphones.
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- distinguish demand-sensitive pricing from personalisation and
+  segmentation
+- define price discrimination as a pricing-strategy term, not an
+  accusation
+- explain why a single quoted price should be treated as one sample from a
+  distribution
+- state this course's evidence rule for discussing pricing mechanisms
+  without naming a real company
+- identify which inputs, besides time, a price might be responding to in a
+  given scenario
+
+## Before class
+
+If you're comfortable doing so, check a price for the same item from two
+different devices, logged in and logged out, or at two different times of
+day, and note whether it changed. If it didn't, that's a valid and common
+result — the point is running the check, not finding a dramatic gap.
+
+## In class
+
+Given a short hypothetical scenario describing a price that varies by
+device, location, or login state, classify the mechanism as
+demand-sensitive, personalised, or ambiguous from the evidence given — and
+say what additional evidence would resolve the ambiguity.
+
+## What you should leave knowing
+
+Once price can depend on inputs you don't control or see, the number on
+your screen is a sample, not a fact — and this course's rule against
+naming a real company's pricing system without a source applies precisely
+because that uncertainty is easy to overstate into an accusation.
 
 ## Where this goes
 

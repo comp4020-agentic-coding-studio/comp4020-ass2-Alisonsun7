@@ -13,8 +13,10 @@ spec:
   - defines expected value in terms of probability and size of a future discount
   - names stock-out risk and urgency as costs of waiting, not just as inconveniences
   - explicitly avoids claiming that future prices can be predicted with certainty
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - sessions/week-11
+  - lectures/week-10
 ---
 
 ## Core question
@@ -62,6 +64,46 @@ discount size can be estimated from it — but it is not a promise. Week 11
 turns this exact situation into a calculator: given a price, a rough
 probability, a rough discount size, and how much the wait itself would cost,
 should this shopper wait or buy today?
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- define expected value in terms of the probability and size of a future
+  discount
+- compute expected saving from waiting given a stated probability and
+  discount size
+- name stock-out risk and urgency as real costs of waiting, distinct from
+  the money saved
+- explain why this course treats future prices as estimable, not
+  predictable
+- decide, given a stated set of assumptions, whether the expected saving
+  clears a stated bar for waiting
+
+## Before class
+
+Think of one purchase you're currently, or recently were, putting off in
+the hope of a better price, and write down your honest best guesses for:
+how likely a discount is in the timeframe you'd wait, and roughly how large
+it would be.
+
+## In class
+
+Using the numbers you brought, compute expected saving as probability
+times discount size, then decide as a group whether that number is big
+enough to justify waiting — and state explicitly what would have to
+change, in probability, size, or urgency, to flip your answer.
+
+## What you should leave knowing
+
+Waiting is a bet with a computable expected value; a small, likely
+discount can beat a large, unlikely one, and neither is a guarantee.
+
+This week has a full lecture — [Lecture 4: Should You
+Wait?](/lectures/week-10/), whose [slide deck](/decks/week-10/) walks
+through the expected-value calculation above in detail, and whose
+reasoning feeds directly into [Assessment 3, Build a Buying
+Engine](/assessments/build-a-buying-engine/).
 
 ## Where this goes
 

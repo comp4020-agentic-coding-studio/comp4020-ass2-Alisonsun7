@@ -15,6 +15,7 @@ spec:
   - synthesises at least five prior weeks' concepts into a single decision framework
   - explicitly rejects "always find the lowest price" as the course's conclusion
   - states the actual conclusion in terms of information, constraints and values
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - assessments/build-a-buying-engine
 ---
@@ -80,6 +81,40 @@ searching (and correctly ignored). None of it produces a single universally
 correct answer — that was never the goal. What it produces is a buyer who
 can say exactly why they bought what they bought, at the price they paid,
 and defend every part of that reasoning.
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- synthesise at least five prior weeks' concepts into a single purchase
+  decision
+- explain why "always find the lowest price" is not this course's
+  conclusion
+- state the actual conclusion in terms of information, constraints, and
+  values
+- identify, for a specific purchase, which of the semester's factors are
+  most load-bearing and which are negligible
+- defend a purchase decision's reasoning, not just its outcome
+
+## Before class
+
+Pick one purchase you're actually considering, or recently made, and list
+every factor from this semester — price history, quantity and waste,
+context-dependence, ongoing cost, alternatives, uncertainty, time cost,
+personal priorities — that actually applies to it. Some won't; that's
+fine, and worth noting why.
+
+## In class
+
+Present your purchase and factor list to a partner. Their job is to find
+one factor you left out that actually matters, and one you included that
+doesn't carry real weight for this specific decision — then swap roles.
+
+## What you should leave knowing
+
+A good purchase decision is not the one with the lowest number; it's the
+one whose reasoning you can state completely and defend, using exactly the
+factors that actually apply to it and no others.
 
 ## Where this goes
 

@@ -13,6 +13,7 @@ spec:
   - computes an annualised cost from a recurring charge, not just the per-period figure
   - explains inertia and cancellation friction as distinct mechanisms
   - reuses the usable-quantity idea from Week 2 to define cost per actual use
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - sessions/week-08
 ---
@@ -57,6 +58,37 @@ noise-cancellation profile updates. Over two years that's roughly $96 — more
 than a third of the headphones' own price — turning a one-time $249 decision
 into a $249-plus-an-ongoing-fee decision that a sticker price never
 disclosed.
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- convert a recurring charge into an annualised cost, not just the
+  per-period figure
+- distinguish inertia from cancellation friction as separate mechanisms
+- compute cost per actual use for a subscription, reusing Week 2's
+  usable-quantity idea
+- identify an introductory-pricing offer as a reference-price problem
+  (Week 3) stretched over time
+- state why the sticker price of a subscription understates its full cost
+
+## Before class
+
+List every recurring charge you're currently paying for — subscriptions,
+memberships, plans — and, for each, your best honest guess at how many
+times you actually used it last month.
+
+## In class
+
+Pick one subscription from the list, yours or a classmate's, and compute
+its cost per actual use. Then decide: if a one-off alternative existed at a
+fixed price, what price would make it the better choice?
+
+## What you should leave knowing
+
+A recurring price is a one-off price multiplied by however long inertia
+lets it continue; the number that should be compared against an
+alternative is cost per use, not cost per period.
 
 ## Where this goes
 

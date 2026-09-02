@@ -14,6 +14,7 @@ spec:
   - names at least four different things "price" can mean for the same product
   - states the semester's running scenario and its opening price
   - does not treat the sticker price as self-evidently the whole answer
+  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
 related:
   - lectures/week-01
   - assessments/deal-autopsy
@@ -61,6 +62,36 @@ loyalty scheme, a resale market, a possible future sale. Today, $249 is all we
 know, and that is exactly the trap: a single number, with no context attached,
 looks like a fact. By Week 12 it will look like the least interesting part of
 the decision.
+
+## Learning outcomes
+
+By the end of this week, you should be able to:
+
+- name at least four different things "price" can mean for the same product
+- explain why a reference price and a market price can legitimately disagree
+- identify which of the five readings a specific number on a tag is playing
+- explain why "50% off" is a claim about a reference price, not about value
+- state the semester's running scenario in one sentence
+
+## Before class
+
+Find one real price tag, receipt, or online listing you've seen recently
+that shows a "was" price next to a "now" price. Write down both numbers and,
+if you can find one, a place the same or a near-identical item sells for a
+different price. Bring the numbers, not just the badge.
+
+## In class
+
+In pairs, swap the numbers you brought. For your partner's example: which of
+the five readings of "price" (sticker, reference, sale, market, willingness
+to pay) is doing the most work on a shopper, and which one is basically
+invisible on the tag? Be ready to defend your answer in one sentence.
+
+## What you should leave knowing
+
+A price is not one fact about a product; it is a choice about which of
+several true numbers to print in the largest font. Every later week attacks
+a different one of those five numbers.
 
 ## Where this goes
 
