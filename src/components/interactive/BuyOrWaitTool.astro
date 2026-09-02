@@ -1,0 +1,170 @@
+---
+// Weeks 10–11 — turns "should I buy now or wait for a better deal" into
+// visible arithmetic: expected savings from waiting, minus the cost of the
+// time waiting takes. Hours already spent searching are collected but never
+// enter the formula, on purpose — that's the sunk-cost teaching moment.
+---
+
+<div class="bow" data-buy-or-wait>
+  <div class="bow__grid">
+    <label>
+      Current price ($)
+      <input type="number" min="0" step="1" value="249" data-field="price" />
+    </label>
+    <label>
+      Chance a better deal appears before you need it (%)
+      <input type="number" min="0" max="100" step="1" value="30" data-field="chance" />
+    </label>
+    <label>
+      Typical size of that deal (% off)
+      <input type="number" min="0" max="100" step="1" value="15" data-field="size" />
+    </label>
+    <label>
+      Days until you actually need it
+      <input type="number" min="0" step="1" value="14" data-field="days" />
+    </label>
+    <label>
+      Extra hours you'd spend watching for a deal
+      <input type="number" min="0" step="0.5" value="2" data-field="search-hours" />
+    </label>
+    <label>
+      What your time is worth ($/hour)
+      <input type="number" min="0" step="1" value="20" data-field="value-per-hour" />
+    </label>
+    <label>
+      Hours already spent researching so far <span class="bow__hint">(does not affect the answer)</span>
+      <input type="number" min="0" step="0.5" value="3" data-field="sunk-hours" />
+    </label>
+  </div>
+
+  <div class="bow__math" data-math>
+    <p><span>Expected savings from waiting</span> <output data-out="expected-savings">—</output></p>
+    <p><span>Cost of the time spent waiting</span> <output data-out="search-cost">—</output></p>
+    <p class="bow__net"><span>Net expected benefit of waiting</span> <output data-out="net">—</output></p>
+  </div>
+
+  <p class="bow__verdict" data-verdict aria-live="polite"></p>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-buy-or-wait]");
+  if (root) {
+    const field = (name: string) => root.querySelector<HTMLInputElement>(`[data-field="${name}"]`);
+    const out = (name: string) => root.querySelector<HTMLElement>(`[data-out="${name}"]`);
+    const verdict = root.querySelector<HTMLElement>("[data-verdict]");
+    const money = (n: number) => (Number.isFinite(n) ? `${n < 0 ? "-" : ""}$${Math.abs(n).toFixed(2)}` : "—");
+
+    function recalc() {
+      const price = Number(field("price")?.value);
+      const chance = Number(field("chance")?.value) / 100;
+      const size = Number(field("size")?.value) / 100;
+      const days = Number(field("days")?.value);
+      const searchHours = Number(field("search-hours")?.value);
+      const valuePerHour = Number(field("value-per-hour")?.value);
+      // Hours already spent are read for display only — never used below.
+
+      const expectedSavings = price * chance * size;
+      const searchCost = searchHours * valuePerHour;
+      const net = expectedSavings - searchCost;
+
+      if (out("expected-savings")) out("expected-savings")!.textContent = money(expectedSavings);
+      if (out("search-cost")) out("search-cost")!.textContent = money(searchCost);
+      if (out("net")) out("net")!.textContent = money(net);
+
+      if (!verdict) return;
+      if (![price, chance, size, days, searchHours, valuePerHour].every(Number.isFinite)) {
+        verdict.textContent = "Fill in every field to get a recommendation.";
+        verdict.dataset.verdictKind = "";
+        return;
+      }
+
+      if (days < 1) {
+        verdict.textContent =
+          "BUY NOW — there's no time left to wait, so a hypothetical future deal can't help you.";
+        verdict.dataset.verdictKind = "buy";
+      } else if (net > 2) {
+        verdict.textContent =
+          `WAIT — waiting is worth about ${money(net)} more than buying today, after paying for the time it costs. ` +
+          "Hours already spent researching are a sunk cost: real, but irrelevant to this decision.";
+        verdict.dataset.verdictKind = "wait";
+      } else if (net < -2) {
+        verdict.textContent =
+          `BUY NOW — the time cost of waiting is about ${money(Math.abs(net))} more than the expected savings. ` +
+          "The wait is not free just because no money changes hands during it.";
+        verdict.dataset.verdictKind = "buy";
+      } else {
+        verdict.textContent =
+          "IT DEPENDS — the expected savings and the cost of waiting are close enough that this comes down to " +
+          "how much you personally dislike uncertainty, not to the arithmetic.";
+        verdict.dataset.verdictKind = "depends";
+      }
+    }
+
+    root.querySelectorAll("input").forEach((input) => input.addEventListener("input", recalc));
+    recalc();
+  }
+</script>
+
+<style>
+  .bow {
+    margin-block: var(--at-spacing-xl);
+    padding: var(--at-spacing-lg);
+    border: 1px dashed var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .bow__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--at-spacing-md);
+  }
+
+  @media (max-width: 40rem) {
+    .bow__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .bow__hint {
+    font-weight: 400;
+    color: var(--at-text-muted);
+  }
+
+  .bow__math {
+    margin-block: var(--at-spacing-lg);
+    padding: var(--at-spacing-md);
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    font-family: var(--at-font-mono);
+  }
+
+  .bow__math p {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--at-spacing-md);
+    margin: 0.35em 0;
+  }
+
+  .bow__net {
+    padding-block-start: 0.35em;
+    border-block-start: 1px dashed var(--at-border);
+    font-weight: 700;
+  }
+
+  .bow__verdict {
+    padding: var(--at-spacing-md);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    border: 2px solid var(--at-border);
+    font-weight: 600;
+  }
+
+  .bow__verdict[data-verdict-kind="wait"] {
+    border-color: var(--at-success);
+  }
+
+  .bow__verdict[data-verdict-kind="buy"] {
+    border-color: var(--at-accent);
+  }
+</style>

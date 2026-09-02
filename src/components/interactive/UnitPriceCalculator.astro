@@ -1,0 +1,179 @@
+---
+// Week 2 — compares two packages on unit price, and separately on the price
+// per unit you'll actually use, since those two numbers can disagree.
+interface Props {
+  labelA?: string;
+  labelB?: string;
+}
+const { labelA = "Pack A", labelB = "Pack B" } = Astro.props;
+---
+
+<div class="upc" data-unit-price-calculator>
+  <div class="upc__grid">
+    <fieldset class="upc__option">
+      <legend>{labelA}</legend>
+      <label>
+        Total price ($)
+        <input type="number" min="0" step="0.01" value="12.00" data-field="price-a" />
+      </label>
+      <label>
+        Quantity in pack (units)
+        <input type="number" min="0.01" step="0.01" value="1000" data-field="qty-a" />
+      </label>
+      <label>
+        Quantity you'll actually use
+        <input type="number" min="0" step="0.01" value="700" data-field="usable-a" />
+      </label>
+    </fieldset>
+
+    <fieldset class="upc__option">
+      <legend>{labelB}</legend>
+      <label>
+        Total price ($)
+        <input type="number" min="0" step="0.01" value="7.50" data-field="price-b" />
+      </label>
+      <label>
+        Quantity in pack (units)
+        <input type="number" min="0.01" step="0.01" value="500" data-field="qty-b" />
+      </label>
+      <label>
+        Quantity you'll actually use
+        <input type="number" min="0" step="0.01" value="500" data-field="usable-b" />
+      </label>
+    </fieldset>
+  </div>
+
+  <dl class="upc__results" data-results aria-live="polite">
+    <div>
+      <dt>{labelA} — price per unit in the pack</dt>
+      <dd data-out="nominal-a">—</dd>
+    </div>
+    <div>
+      <dt>{labelA} — price per unit you'll actually use</dt>
+      <dd data-out="usable-a">—</dd>
+    </div>
+    <div>
+      <dt>{labelB} — price per unit in the pack</dt>
+      <dd data-out="nominal-b">—</dd>
+    </div>
+    <div>
+      <dt>{labelB} — price per unit you'll actually use</dt>
+      <dd data-out="usable-b">—</dd>
+    </div>
+  </dl>
+
+  <p class="upc__verdict" data-verdict></p>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-unit-price-calculator]");
+  if (root) {
+    const field = (name: string) =>
+      root.querySelector<HTMLInputElement>(`[data-field="${name}"]`);
+    const out = (name: string) => root.querySelector<HTMLElement>(`[data-out="${name}"]`);
+    const verdict = root.querySelector<HTMLElement>("[data-verdict]");
+    const money = (n: number) => (Number.isFinite(n) ? `$${n.toFixed(4)}` : "—");
+
+    function recalc() {
+      const priceA = Number(field("price-a")?.value);
+      const qtyA = Number(field("qty-a")?.value);
+      const usableAInput = field("usable-a")?.value;
+      const usableA = usableAInput ? Number(usableAInput) : qtyA;
+
+      const priceB = Number(field("price-b")?.value);
+      const qtyB = Number(field("qty-b")?.value);
+      const usableBInput = field("usable-b")?.value;
+      const usableB = usableBInput ? Number(usableBInput) : qtyB;
+
+      const nominalA = priceA / qtyA;
+      const nominalB = priceB / qtyB;
+      const usableUnitA = priceA / usableA;
+      const usableUnitB = priceB / usableB;
+
+      if (out("nominal-a")) out("nominal-a")!.textContent = money(nominalA);
+      if (out("nominal-b")) out("nominal-b")!.textContent = money(nominalB);
+      if (out("usable-a")) out("usable-a")!.textContent = money(usableUnitA);
+      if (out("usable-b")) out("usable-b")!.textContent = money(usableUnitB);
+
+      if (!verdict) return;
+      if (![nominalA, nominalB, usableUnitA, usableUnitB].every(Number.isFinite)) {
+        verdict.textContent = "Fill in every field to compare.";
+        return;
+      }
+
+      const nominalWinner = nominalA <= nominalB ? "A" : "B";
+      const usableWinner = usableUnitA <= usableUnitB ? "A" : "B";
+
+      verdict.textContent =
+        nominalWinner === usableWinner
+          ? `Pack ${nominalWinner} is cheaper either way you count it.`
+          : `Pack ${nominalWinner} has the lower price per unit in the pack, but once you subtract what you won't ` +
+            `use, Pack ${usableWinner} is actually cheaper per unit you get value from. The lowest unit price only ` +
+            "helps if the quantity behind it gets used, not wasted.";
+    }
+
+    root.querySelectorAll("input").forEach((input) => input.addEventListener("input", recalc));
+    recalc();
+  }
+</script>
+
+<style>
+  .upc {
+    margin-block: var(--at-spacing-xl);
+    padding: var(--at-spacing-lg);
+    border: 1px dashed var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .upc__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--at-spacing-lg);
+  }
+
+  @media (max-width: 40rem) {
+    .upc__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .upc__option {
+    display: flex;
+    flex-direction: column;
+    gap: var(--at-spacing-sm);
+    padding: var(--at-spacing-md);
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+  }
+
+  .upc__option legend {
+    padding-inline: var(--at-spacing-xs);
+    font-weight: 600;
+  }
+
+  .upc__results {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--at-spacing-md);
+    margin: var(--at-spacing-lg) 0;
+  }
+
+  .upc__results dt {
+    font-size: var(--at-font-size-sm);
+    color: var(--at-text-muted);
+  }
+
+  .upc__results dd {
+    margin: 0;
+    font-family: var(--at-font-mono);
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .upc__verdict {
+    padding-block-start: var(--at-spacing-md);
+    border-block-start: 1px dashed var(--at-border);
+    font-weight: 600;
+  }
+</style>

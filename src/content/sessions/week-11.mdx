@@ -1,0 +1,68 @@
+---
+title: "Week 11 — Your Time Has a Price"
+description:
+  Search, travel and waiting all cost time, and time has an opportunity
+  cost. This week builds a calculator that weighs it against expected savings.
+week: 11
+date: 2026-10-05
+teachers:
+  - marisol-quaye
+tags: ["stage-decide", "opportunity-cost"]
+buildsOn: [9, 10]
+spec:
+  - defines opportunity cost of time using an explicit value-per-hour figure
+  - treats hours already spent searching as a sunk cost excluded from the forward decision
+  - includes a working buy-or-wait tool whose recommendation is explained, not just stated
+related: []
+---
+
+import BuyOrWaitTool from "../../components/interactive/BuyOrWaitTool.astro";
+
+## Core question
+
+> How much effort is it rational to spend in order to save money?
+
+Week 10 priced the *uncertainty* of waiting. This week prices the *time*
+waiting takes. Search cost, travel cost, and time spent watching for a
+lower price are all real costs — they just aren't denominated in dollars
+until you choose a value for your own hour.
+
+## Opportunity cost of time
+
+If your time is worth $20/hour doing anything else you'd rather be doing,
+then two hours spent comparison-shopping to save $15 has already lost money
+before you've bought anything: $40 of time against $15 of saving. This isn't
+a claim that comparison-shopping is pointless — it's a claim that it has a
+break-even point, and that point is calculable.
+
+## The sunk-cost trap
+
+Hours already spent searching feel like they should count toward the
+decision — "I've already spent three hours on this, I might as well keep
+going" — but they are a **sunk cost**: spent regardless of what you decide
+next, and therefore irrelevant to what you should decide next. The only
+hours that belong in the forward-looking calculation are the ones you
+haven't spent yet.
+
+## A working example
+
+The tool below combines Week 10's expected-value framing with this week's
+time cost. It asks for hours *already* spent purely to make a point: watch
+what happens to the recommendation when you change that number versus when
+you change any of the others.
+
+<BuyOrWaitTool />
+
+## The $249 headphones
+
+The shopper from Week 10 has already spent three hours reading reviews and
+comparing listings. That's sunk. What matters now is: given the estimated
+30% chance of a 15% sale, 14 days of runway, and roughly two more hours of
+watching required to catch the sale if it happens — is it worth it? Change
+the value of an hour in the tool above and watch the recommendation flip.
+
+## Where this goes
+
+Week 12 puts everything — price, quantity, discounts, history, context,
+subscriptions, points, alternatives, uncertainty, and time — into one final
+decision.

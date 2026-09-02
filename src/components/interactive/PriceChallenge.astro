@@ -1,0 +1,131 @@
+---
+// A one-shot "which is cheaper" reveal. Teaches reference-price framing
+// (Week 1) before the visitor has read a word of the course description.
+---
+
+<div class="price-challenge" data-price-challenge>
+  <p class="price-challenge__prompt">Which is the better price?</p>
+  <div class="price-challenge__options">
+    <button type="button" class="price-challenge__option" data-choice="a" data-price="100">
+      <span class="price-challenge__label">Option A</span>
+      <span class="price-challenge__was">Was $200</span>
+      <span class="price-challenge__now">Now $100</span>
+      <span class="price-challenge__badge">50% OFF</span>
+    </button>
+    <button type="button" class="price-challenge__option" data-choice="b" data-price="95">
+      <span class="price-challenge__label">Option B</span>
+      <span class="price-challenge__now price-challenge__now--plain">$95</span>
+    </button>
+  </div>
+  <p class="price-challenge__result" data-result hidden></p>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-price-challenge]");
+  const result = root?.querySelector<HTMLElement>("[data-result]");
+  const buttons = root?.querySelectorAll<HTMLButtonElement>("[data-choice]");
+
+  buttons?.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (!result) return;
+      const chosen = button.dataset.choice;
+      const cheaper = "b"; // $95 < $100, regardless of the sticker theatre
+      buttons.forEach((b) => b.classList.remove("is-chosen", "is-cheaper"));
+      button.classList.add("is-chosen");
+      root?.querySelector(`[data-choice="${cheaper}"]`)?.classList.add("is-cheaper");
+
+      result.hidden = false;
+      result.textContent =
+        chosen === cheaper
+          ? "Correct — B is $5 cheaper. The 50% badge on A is measuring a distance to a reference price, not to B."
+          : "B is actually $5 cheaper. “50% off” describes A's distance from a $200 reference price — a number this page invented for the demo, like a retailer inventing one for a sale. It says nothing about A versus B.";
+    });
+  });
+</script>
+
+<style>
+  .price-challenge {
+    margin-block: var(--at-spacing-xl);
+    padding: var(--at-spacing-lg);
+    border: 1px dashed var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .price-challenge__prompt {
+    margin-block-start: 0;
+    font-weight: 600;
+  }
+
+  .price-challenge__options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--at-spacing-md);
+  }
+
+  .price-challenge__option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--at-spacing-xs);
+    padding: var(--at-spacing-lg) var(--at-spacing-md);
+    border: 2px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    color: var(--at-text);
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .price-challenge__option:hover {
+    border-color: var(--at-accent);
+  }
+
+  .price-challenge__option.is-chosen {
+    border-color: var(--at-accent);
+    box-shadow: var(--at-shadow-sm);
+  }
+
+  .price-challenge__option.is-cheaper .price-challenge__now {
+    color: var(--at-success);
+  }
+
+  .price-challenge__label {
+    font-size: var(--at-font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--at-text-muted);
+  }
+
+  .price-challenge__was {
+    font-family: var(--at-font-mono);
+    text-decoration: line-through;
+    color: var(--at-text-muted);
+  }
+
+  .price-challenge__now {
+    font-family: var(--at-font-mono);
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+
+  .price-challenge__now--plain {
+    margin-block-start: var(--at-spacing-sm);
+  }
+
+  .price-challenge__badge {
+    padding: 0.15em 0.6em;
+    border-radius: 999px;
+    background: var(--at-secondary);
+    color: var(--at-white);
+    font-size: var(--at-font-size-xs);
+    font-weight: 700;
+  }
+
+  .price-challenge__result {
+    margin-block: var(--at-spacing-md) 0;
+    padding-block-start: var(--at-spacing-md);
+    border-block-start: 1px dashed var(--at-border);
+  }
+</style>

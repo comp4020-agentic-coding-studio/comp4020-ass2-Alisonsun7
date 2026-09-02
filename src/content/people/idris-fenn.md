@@ -1,17 +1,20 @@
 ---
 title: Idris Fenn
 description:
-  A tutor working across the course's first reviews and the practical work that
-  follows them.
+  Teaches the CALCULATE-heavy middle of the semester — coupons, dynamic
+  pricing, subscriptions and points — and builds most of the worked examples.
 affiliation: Slop University School of Invented Disciplines
 role: tutor
 email: idris.fenn@slop.university
 contact: Ask during sessions, or email when a question cannot wait until the next one.
-photo: ./idris-fenn.avif
-photoAlt: A stylised portrait of a person facing the viewer, flat gold and black shapes on warm cream, in a two-ink risograph print
 ---
 
-<!-- STARTER_CONTENT: replace this person entry, then remove this comment. -->
+Idris teaches the even-numbered weeks, which is most of the course's
+computational middle: coupon stacking, dynamic pricing, subscriptions, and
+loyalty points. He's the one who insists every discount rule gets written
+down as an explicit function before anyone is allowed to call it "obviously
+a good deal", and marks Assessment 2 with that same insistence.
 
-Replace this entry. A second person makes the listing, role ordering and
-teacher-reference fields visible before you replace the cast with your own.
+Reachable by email between sessions; questions about a specific week's
+calculator are best asked live, so the fix (or the "that's intentional")
+can happen on the spot.
