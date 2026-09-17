@@ -19,6 +19,8 @@ related:
   - assessments/beat-the-shopping-cart
 ---
 
+import CouponOptimizer from "../../components/interactive/CouponOptimizer.astro";
+
 ## Core question
 
 > When discounts have rules, how should they be combined?
@@ -63,8 +65,23 @@ more expensive, not less.
 Suppose a $30-off coupon requires a $260 minimum spend, and a carrying case
 costs $25. Buying the case to unlock the coupon looks like "$25 case, minus
 $30 coupon" — but only if the case was worth buying at all; otherwise it's
-$249 headphones plus a $25 item you didn't want, minus $30, which is $244:
-five dollars cheaper than $249, and a case sitting unused in a drawer.
+$249 headphones plus a $25 item you didn't want, minus $30, which is
+<span class="price-now">$244</span>: five dollars cheaper than
+<span class="price-was">$249</span>, and a case sitting unused in a drawer.
+
+The arithmetic is easy. The part worth practising is how *narrow* the win is,
+and how fast it turns negative. Change the numbers below and watch where the
+verdict flips.
+
+<CouponOptimizer />
+
+The last field is the one that matters, and it's the one no checkout page
+asks you. "What is the add-on actually worth to you" is a number only you
+have, and a threshold coupon is profitable for the retailer precisely when
+shoppers leave it blank and assume it equals the price.
+
+<p class="caveat">The $30 coupon, the $260 threshold and the $25 case are
+invented for this example. No real promotion is being described.</p>
 
 ## Learning outcomes
 
@@ -107,6 +124,8 @@ through the threshold-trap and bundle examples above live, and whose
 reasoning is exactly what [Assessment 2, Beat the Shopping
 Cart](/assessments/beat-the-shopping-cart/), asks you to apply to a
 constrained cart of your own.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

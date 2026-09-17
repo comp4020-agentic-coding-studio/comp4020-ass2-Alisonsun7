@@ -1,0 +1,175 @@
+---
+// Week 4 — the threshold-coupon trap from this week's own $249/$260/$25
+// worked example, made editable. Shows the cash arithmetic separately from
+// the "is the add-on actually worth it" question, since those two numbers
+// answering "was this worth it" can disagree.
+---
+
+<div class="cop" data-coupon-optimizer>
+  <div class="cop__grid">
+    <label>
+      What you actually want to buy ($)
+      <input type="number" min="0" step="1" value="249" data-field="want-price" />
+    </label>
+    <label>
+      Coupon value ($ off)
+      <input type="number" min="0" step="1" value="30" data-field="coupon-value" />
+    </label>
+    <label>
+      Minimum spend to unlock it ($)
+      <input type="number" min="0" step="1" value="260" data-field="threshold" />
+    </label>
+    <label>
+      Price of an add-on that would close the gap ($)
+      <input type="number" min="0" step="1" value="25" data-field="addon-price" />
+    </label>
+    <label>
+      What that add-on is actually worth to you ($)
+      <input type="number" min="0" step="1" value="0" data-field="addon-value" />
+    </label>
+  </div>
+
+  <div class="cop__math" data-math>
+    <p><span>Gap to the threshold</span> <output data-out="gap">—</output></p>
+    <p><span>Cash cost if you add it and use the coupon</span> <output data-out="cash-cost">—</output></p>
+    <p><span>Cash cost of just buying it, no coupon</span> <output data-out="baseline">—</output></p>
+    <p class="cop__net"><span>What the add-on actually cost you</span> <output data-out="waste">—</output></p>
+  </div>
+
+  <p class="cop__verdict" data-verdict aria-live="polite"></p>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-coupon-optimizer]");
+  if (root) {
+    const field = (name: string) => root.querySelector<HTMLInputElement>(`[data-field="${name}"]`);
+    const out = (name: string) => root.querySelector<HTMLElement>(`[data-out="${name}"]`);
+    const verdict = root.querySelector<HTMLElement>("[data-verdict]");
+    const money = (n: number) => (Number.isFinite(n) ? `$${n.toFixed(2)}` : "—");
+
+    function recalc() {
+      const wantPrice = Number(field("want-price")?.value);
+      const couponValue = Number(field("coupon-value")?.value);
+      const threshold = Number(field("threshold")?.value);
+      const addonPrice = Number(field("addon-price")?.value);
+      const addonValue = Number(field("addon-value")?.value);
+
+      if (![wantPrice, couponValue, threshold, addonPrice, addonValue].every(Number.isFinite)) {
+        if (verdict) verdict.textContent = "Fill in every field to see whether the coupon is worth chasing.";
+        return;
+      }
+
+      const baseline = wantPrice;
+      const gap = Math.max(0, threshold - wantPrice);
+
+      if (out("gap")) out("gap")!.textContent = money(gap);
+      if (out("baseline")) out("baseline")!.textContent = money(baseline);
+
+      if (!verdict) return;
+
+      if (wantPrice >= threshold) {
+        if (out("cash-cost")) out("cash-cost")!.textContent = money(wantPrice - couponValue);
+        if (out("waste")) out("waste")!.textContent = money(0);
+        verdict.textContent =
+          "You already clear the threshold — the coupon applies for free. No add-on needed.";
+        verdict.dataset.verdictKind = "win";
+        return;
+      }
+
+      if (wantPrice + addonPrice < threshold) {
+        if (out("cash-cost")) out("cash-cost")!.textContent = "—";
+        if (out("waste")) out("waste")!.textContent = "—";
+        verdict.textContent =
+          "Even with the add-on, you don't reach the minimum spend — the coupon isn't available at all.";
+        verdict.dataset.verdictKind = "buy";
+        return;
+      }
+
+      const cashCost = wantPrice + addonPrice - couponValue;
+      const waste = Math.max(0, addonPrice - addonValue);
+
+      if (out("cash-cost")) out("cash-cost")!.textContent = money(cashCost);
+      if (out("waste")) out("waste")!.textContent = money(waste);
+
+      if (cashCost >= baseline) {
+        verdict.textContent =
+          `Skip the coupon — chasing it costs ${money(cashCost - baseline)} more in cash than just buying the ` +
+          "thing you wanted. The add-on's price is bigger than the coupon it unlocks.";
+        verdict.dataset.verdictKind = "buy";
+      } else if (waste > 0) {
+        verdict.textContent =
+          `Chasing the coupon is ${money(baseline - cashCost)} cheaper in cash — but ${money(waste)} of that ` +
+          "\"saving\" is really the add-on's price, since it's worth less to you than you paid for it. That's not " +
+          "free money; it's an unwanted item sitting in a drawer.";
+        verdict.dataset.verdictKind = "depends";
+      } else {
+        verdict.textContent =
+          `Chase the coupon — it's ${money(baseline - cashCost)} cheaper, and the add-on is worth at least what ` +
+          "you paid for it, so there's no hidden waste in this one.";
+        verdict.dataset.verdictKind = "win";
+      }
+    }
+
+    root.querySelectorAll("input").forEach((input) => input.addEventListener("input", recalc));
+    recalc();
+  }
+</script>
+
+<style>
+  .cop {
+    margin-block: var(--at-spacing-xl);
+    padding: var(--at-spacing-lg);
+    border: 1px dashed var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .cop__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--at-spacing-md);
+  }
+
+  @media (max-width: 40rem) {
+    .cop__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .cop__math {
+    margin-block: var(--at-spacing-lg);
+    padding: var(--at-spacing-md);
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    font-family: var(--at-font-mono);
+  }
+
+  .cop__math p {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--at-spacing-md);
+    margin: 0.35em 0;
+  }
+
+  .cop__net {
+    padding-block-start: 0.35em;
+    border-block-start: 1px dashed var(--at-border);
+    font-weight: 700;
+  }
+
+  .cop__verdict {
+    padding: var(--at-spacing-md);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg);
+    border: 2px solid var(--at-border);
+    font-weight: 600;
+  }
+
+  .cop__verdict[data-verdict-kind="win"] {
+    border-color: var(--at-success);
+  }
+
+  .cop__verdict[data-verdict-kind="buy"] {
+    border-color: var(--at-accent);
+  }
+</style>

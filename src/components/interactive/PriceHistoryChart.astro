@@ -1,0 +1,289 @@
+---
+// Week 5 — the hypothetical six-month series this week's prose describes in
+// words, drawn so students can read it as a shape instead of a sentence.
+// Sampled fortnightly on purpose: the prose calls the sale a "two-week dip",
+// and monthly points would draw a month-long one instead.
+//
+// One series, so identity comes from the title, not a legend (dataviz: a
+// single line needs no legend box). Stroke colour is a theme token, so light
+// and dark mode track the brand palette instead of a hardcoded hex.
+interface Point {
+  date: string;
+  price: number;
+  tick?: string;
+}
+
+const points: Point[] = [
+  { date: "6 Jan", price: 249, tick: "Jan" },
+  { date: "20 Jan", price: 249 },
+  { date: "3 Feb", price: 251, tick: "Feb" },
+  { date: "17 Feb", price: 249 },
+  { date: "2 Mar", price: 249, tick: "Mar" },
+  { date: "16 Mar", price: 246 },
+  { date: "30 Mar", price: 249 },
+  { date: "13 Apr", price: 219, tick: "Apr" },
+  { date: "27 Apr", price: 249 },
+  { date: "11 May", price: 252, tick: "May" },
+  { date: "25 May", price: 249 },
+  { date: "8 Jun", price: 249, tick: "Jun" },
+  { date: "22 Jun", price: 249 },
+];
+
+const sorted = [...points.map((p) => p.price)].sort((a, b) => a - b);
+const mid = Math.floor(sorted.length / 2);
+const median =
+  sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
+const lowest = sorted[0];
+
+// Fixed price axis rather than autoscaling to the data, so the $260 ceiling
+// the week's prose talks about is a real line on the chart.
+const PRICE_MIN = 210;
+const PRICE_MAX = 260;
+const Y_TOP = 14;
+const Y_BOTTOM = 132;
+const X_LEFT = 34;
+const X_RIGHT = 306;
+const Y_TICKS = [220, 240, 260];
+
+const yFor = (price: number) =>
+  Y_BOTTOM - ((price - PRICE_MIN) / (PRICE_MAX - PRICE_MIN)) * (Y_BOTTOM - Y_TOP);
+const xFor = (i: number) => X_LEFT + (i / (points.length - 1)) * (X_RIGHT - X_LEFT);
+
+const coords = points.map((p, i) => ({ ...p, x: xFor(i), y: yFor(p.price) }));
+const linePoints = coords.map((c) => `${c.x},${c.y}`).join(" ");
+const medianY = yFor(median);
+---
+
+<figure class="phc" data-price-history-chart>
+  <figcaption class="phc__caption">
+    Hypothetical price, one pair of headphones, January to June — sampled every
+    two weeks
+  </figcaption>
+
+  <!-- role="group", not role="img": role="img" would make the whole subtree
+       presentational and hide the 13 focusable data points from screen
+       readers. -->
+  <svg viewBox="0 0 320 156" class="phc__svg" role="group" aria-labelledby="phc-desc">
+    <desc id="phc-desc">
+      An invented fortnightly price series. The price sits at or near ${median} for almost the whole
+      window, dips once to ${lowest} in mid-April, and never rises above $260.
+    </desc>
+
+    {
+      Y_TICKS.map((price) => (
+        <g>
+          <line x1={X_LEFT} y1={yFor(price)} x2={X_RIGHT} y2={yFor(price)} class="phc__grid" />
+          <text x={X_LEFT - 5} y={yFor(price) + 2.5} text-anchor="end" class="phc__axis-label">
+            ${price}
+          </text>
+        </g>
+      ))
+    }
+
+    <line
+      x1={X_LEFT}
+      y1={medianY}
+      x2={X_RIGHT}
+      y2={medianY}
+      class="phc__median-line"
+      stroke-dasharray="4 3"
+    />
+    <text x={X_RIGHT} y={medianY - 5} text-anchor="end" class="phc__median-label"
+      >median ${median}</text
+    >
+
+    <polyline points={linePoints} class="phc__line" fill="none" />
+
+    {
+      coords.map((c) => (
+        <g>
+          <circle cx={c.x} cy={c.y} r="4" class="phc__dot" aria-hidden="true" />
+          <circle
+            cx={c.x}
+            cy={c.y}
+            r="10"
+            class="phc__hit"
+            data-date={c.date}
+            data-price={c.price}
+            tabindex="0"
+            role="img"
+            aria-label={`${c.date}: $${c.price}`}
+          />
+          {c.tick && (
+            <text x={c.x} y={Y_BOTTOM + 16} text-anchor="middle" class="phc__axis-label">
+              {c.tick}
+            </text>
+          )}
+        </g>
+      ))
+    }
+  </svg>
+
+  <p class="phc__readout" data-readout aria-live="polite">
+    Hover or tab to a point to read its price.
+  </p>
+
+  <details class="phc__table">
+    <summary>View as table</summary>
+    <div class="phc__table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            points.map((p) => (
+              <tr>
+                <th scope="row">{p.date}</th>
+                <td>${p.price}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p class="caveat">
+    Series invented for this example. It is not a sales record for any real product, and nothing
+    here should be cited as evidence about real prices.
+  </p>
+</figure>
+
+<script>
+  const root = document.querySelector<HTMLElement>("[data-price-history-chart]");
+  if (root) {
+    const readout = root.querySelector<HTMLElement>("[data-readout]");
+    const idle = "Hover or tab to a point to read its price.";
+
+    root.querySelectorAll<SVGCircleElement>(".phc__hit").forEach((point) => {
+      const say = () => {
+        if (readout) readout.textContent = `${point.dataset.date} — $${point.dataset.price}`;
+      };
+      point.addEventListener("mouseenter", say);
+      point.addEventListener("focus", say);
+      point.addEventListener("blur", () => {
+        if (readout) readout.textContent = idle;
+      });
+    });
+
+    root.querySelector(".phc__svg")?.addEventListener("mouseleave", () => {
+      if (readout && !root.querySelector(".phc__hit:focus")) readout.textContent = idle;
+    });
+  }
+</script>
+
+<style>
+  .phc {
+    margin-block: var(--at-spacing-xl);
+    margin-inline: 0;
+    padding: var(--at-spacing-lg);
+    border: 1px dashed var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .phc__caption {
+    margin-block-end: var(--at-spacing-sm);
+    font-size: var(--at-font-size-sm);
+    font-weight: 600;
+  }
+
+  .phc__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 34rem;
+    overflow: visible;
+  }
+
+  .phc__line {
+    stroke: var(--at-accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .phc__grid {
+    stroke: var(--at-border);
+    stroke-width: 0.5;
+  }
+
+  .phc__median-line {
+    stroke: var(--at-text-muted);
+    stroke-width: 1;
+  }
+
+  .phc__axis-label,
+  .phc__median-label {
+    font-family: var(--at-font-mono);
+    font-size: 7px;
+    fill: var(--at-text-muted);
+  }
+
+  .phc__dot {
+    fill: var(--at-accent);
+  }
+
+  .phc__hit {
+    fill: transparent;
+    cursor: pointer;
+  }
+
+  /* The halo is the emphasis; the readout text below is the actual signal, so
+     nothing here depends on colour or hover alone. */
+  .phc__hit:hover + .phc__dot,
+  .phc__hit:focus-visible + .phc__dot {
+    stroke: var(--at-accent);
+    stroke-width: 5;
+    stroke-opacity: 0.3;
+  }
+
+  .phc__hit:focus-visible {
+    outline: 2px solid var(--at-accent);
+    outline-offset: 0;
+  }
+
+  .phc__readout {
+    margin-block: var(--at-spacing-md) 0;
+    font-family: var(--at-font-mono);
+    font-weight: 700;
+  }
+
+  .phc__table {
+    margin-block-start: var(--at-spacing-sm);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .phc__table summary {
+    cursor: pointer;
+  }
+
+  .phc__table-scroll {
+    overflow-x: auto;
+    margin-block-start: var(--at-spacing-sm);
+  }
+
+  .phc__table table {
+    border-collapse: collapse;
+  }
+
+  .phc__table th,
+  .phc__table td {
+    padding: 0.25em 0.75em;
+    border: 1px solid var(--at-border);
+    text-align: left;
+    font-weight: 400;
+  }
+
+  .phc__table thead th {
+    font-weight: 700;
+  }
+
+  .phc .caveat {
+    margin-block: var(--at-spacing-md) 0;
+  }
+</style>

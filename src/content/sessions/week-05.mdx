@@ -19,6 +19,8 @@ related:
   - sessions/week-06
 ---
 
+import PriceHistoryChart from "../../components/interactive/PriceHistoryChart.astro";
+
 ## Core question
 
 > Can today's price be judged without knowing yesterday's price?
@@ -61,12 +63,23 @@ draws that line generally.
 ## The $249 headphones
 
 Hypothetically: suppose the headphones' price over the past six months
-looked like a mostly flat line around $249, with a two-week dip to $219
-around a mid-year sale event, and no time spent above $260. Against that
-shape, $249 reads as an ordinary day, not a deal and not a markup — which is
-a more useful judgement than anything a single "was $329" badge could
-provide. (This series is invented for the example; treat it as
-illustrative, not as a real sales record for any real product.)
+looked like a mostly flat line around <span class="price-now">$249</span>,
+with a two-week dip to <span class="price-now price-now--good">$219</span>
+around a mid-year sale event, and no time spent above $260. That shape looks
+like this:
+
+<PriceHistoryChart />
+
+Against it, $249 reads as an ordinary day — it *is* the median — not a deal
+and not a markup. That is a more useful judgement than anything a single
+<span class="price-was">was $329</span> badge could provide, because the
+badge names one number and the series names the whole distribution it came
+from.
+
+Notice what the chart makes visible that the sentence above it does not: the
+dip is one fortnight out of thirteen. A shopper who happened to look in
+mid-April saw a genuinely unusual price. A shopper who looked in any other
+fortnight saw the normal one, whatever the badge next to it said.
 
 ## Learning outcomes
 
@@ -91,15 +104,23 @@ guess as evidence would be a mistake.
 
 ## In class
 
-Given the hypothetical six-month headphones series below, decide: is
-today's price closer to the median, or is it an outlier? State the rule of
-thumb you used to decide, not just the answer.
+Work from the hypothetical six-month series charted above. Pick any single
+fortnight on it, treat that as "today", and decide: is that price closer to
+the median, or is it an outlier? State the rule of thumb you used, not just
+the answer — then swap fortnights with the pair next to you and check whether
+your two rules agree.
+
+Then try the harder version. Using only the table view of the same series,
+answer the same question without looking at the line. Which of the two
+representations made the outlier easier to find, and why?
 
 ## What you should leave knowing
 
 A single price is one sample from a series; a fair judgement about whether
 it's a good number requires the series, or an honest admission that the
 series isn't available.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 
