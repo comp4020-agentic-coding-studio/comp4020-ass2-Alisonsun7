@@ -82,6 +82,10 @@ correct answer — that was never the goal. What it produces is a buyer who
 can say exactly why they bought what they bought, at the price they paid,
 and defend every part of that reasoning.
 
+<p class="caveat">Every figure in the headphones scenario, from Week 1's $249
+to Week 9's $140 used listing, was invented for teaching. The reasoning
+transfers to real purchases; the numbers do not.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -115,6 +119,8 @@ doesn't carry real weight for this specific decision — then swap roles.
 A good purchase decision is not the one with the lowest number; it's the
 one whose reasoning you can state completely and defend, using exactly the
 factors that actually apply to it and no others.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

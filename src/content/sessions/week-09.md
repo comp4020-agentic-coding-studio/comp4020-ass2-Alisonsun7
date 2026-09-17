@@ -61,6 +61,10 @@ the same need. The $109 gap is only worth paying to avoid if the new
 features are worth $109 to this specific buyer, which is a values question
 this course reaches properly in Week 12, not a pricing question at all.
 
+<p class="caveat">The $140 used listing is invented for this example. It is
+not drawn from any real resale marketplace, and real second-hand prices for
+any category vary far more widely than one number suggests.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -95,6 +99,8 @@ best estimate for the used or repaired alternative.
 "New, from this store" is one point in a much larger space of transaction
 types, and lifecycle cost — not upfront price — is the fair basis for
 comparing across that space.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

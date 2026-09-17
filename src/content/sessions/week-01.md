@@ -43,8 +43,9 @@ object, and a retailer chooses which one to print in large type.
 
 Consider two identical-looking deals:
 
-- **A:** was $200, now $100 — 50% off
-- **B:** $95, no discount shown
+- **A:** was <span class="price-was">$200</span>, now
+  <span class="price-now">$100</span> — 50% off
+- **B:** <span class="price-now price-now--good">$95</span>, no discount shown
 
 Most people's first instinct is that A is the better deal, because "50% off"
 is the loudest number on the page. But B is cheaper. The 50% figure is doing
@@ -62,6 +63,11 @@ loyalty scheme, a resale market, a possible future sale. Today, $249 is all we
 know, and that is exactly the trap: a single number, with no context attached,
 looks like a fact. By Week 12 it will look like the least interesting part of
 the decision.
+
+<p class="caveat">The headphones, their $249 price, and every number attached
+to them over the next twelve weeks are invented for teaching. No real product
+is being described, and none of these figures should be cited as evidence
+about real prices.</p>
 
 ## Learning outcomes
 
@@ -92,6 +98,8 @@ invisible on the tag? Be ready to defend your answer in one sentence.
 A price is not one fact about a product; it is a choice about which of
 several true numbers to print in the largest font. Every later week attacks
 a different one of those five numbers.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

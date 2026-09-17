@@ -59,6 +59,9 @@ than a third of the headphones' own price — turning a one-time $249 decision
 into a $249-plus-an-ongoing-fee decision that a sticker price never
 disclosed.
 
+<p class="caveat">The $3.99/month subscription is invented for this example.
+No real product's app pricing is being described.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -89,6 +92,8 @@ fixed price, what price would make it the better choice?
 A recurring price is a one-off price multiplied by however long inertia
 lets it continue; the number that should be compared against an
 alternative is cost per use, not cost per period.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

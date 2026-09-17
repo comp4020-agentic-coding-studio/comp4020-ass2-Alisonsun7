@@ -56,6 +56,9 @@ days, the realistic expected value of those 500 points is closer to $0 than
 $5 — not because the retailer lied about the exchange rate, but because the
 restrictions around it were never priced into the "$5 value" headline.
 
+<p class="caveat">The 500-point award and its restrictions are invented for
+this example. No real loyalty programme's terms are being described.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -89,6 +92,8 @@ probability and restriction discount you applied.
 A point's advertised value and its realistic value are different numbers,
 and the gap between them is exactly the restrictions the headline rate
 doesn't mention.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

@@ -61,12 +61,18 @@ larger.
 
 ## The $249 headphones
 
-Say the $249 headphones now appear with a tag reading "was $349". If $349
+Say the $249 headphones now appear with a tag reading
+<span class="price-was">was $349</span> <span class="price-now">now
+$249</span>. If $349
 was a genuine, recently-charged price, $249 is meaningfully cheaper than
 what the market has accepted for this item. If $349 is a number invented for
 the tag, the "$100 off" claim is measuring against fiction, and $249 must be
 judged on its own, against other headphones at or near $249 — not against a
 number the retailer chose to make $249 look generous.
+
+<p class="caveat">The $349 tag is invented for this example. It is not a
+claim that any real retailer has printed this, or any other, reference
+price.</p>
 
 ## Learning outcomes
 
@@ -99,6 +105,8 @@ or down that scale.
 "X% off" is a ratio, and a ratio is only informative once you trust its
 denominator; percentage-off and money-saved are different numbers, and a
 badge only ever prints one of them.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

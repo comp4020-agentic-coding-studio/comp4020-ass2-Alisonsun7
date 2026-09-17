@@ -66,6 +66,10 @@ actual future price. Week 11 turns this exact situation into a calculator:
 given a price, a rough probability, a rough discount size, and how much the
 wait itself would cost, should this shopper wait or buy today?
 
+<p class="caveat">The rumoured sale is invented for this example. This course
+makes no claim about any real product's future price, and a shopper's
+"usually" is an impression, not a dataset.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -105,6 +109,8 @@ Wait?](/lectures/week-10/), whose [slide deck](/decks/week-10/) walks
 through the expected-value calculation above in detail, and whose
 reasoning feeds directly into [Assessment 3, Build a Buying
 Engine](/assessments/build-a-buying-engine/).
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 

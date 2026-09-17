@@ -71,6 +71,10 @@ $239 the second time. Nothing about the product changed. What changed is
 which inputs the price function received — and the $10 difference is data
 about the pricing system, not about the headphones.
 
+<p class="caveat">The $239 second reading is invented for this example. It is
+not a claim that any named platform prices this way, or that checking
+incognito produces a lower price in practice.</p>
+
 ## Learning outcomes
 
 By the end of this week, you should be able to:
@@ -106,6 +110,8 @@ Once price can depend on inputs you don't control or see, the number on
 your screen is a sample, not a fact — and this course's rule against
 naming a real company's pricing system without a source applies precisely
 because that uncertainty is easy to overstate into an accusation.
+
+<hr class="receipt-divider" />
 
 ## Where this goes
 
