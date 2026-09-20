@@ -1,9 +1,8 @@
 ---
 title: "Week 5 — The Price Has a History"
 description:
-  A single snapshot price can't be judged in isolation. This week treats
-  price as a function of time, and introduces baselines, medians and
-  volatility as tools for reading it.
+  A single price is easier to judge when you know what it has been before.
+  This week uses price history to tell ordinary prices from unusual ones.
 week: 5
 date: 2026-08-24
 teachers:
@@ -14,7 +13,7 @@ spec:
   - represents price as a function of time, not a single fixed value
   - distinguishes a median baseline from a single historical reference price
   - explains why a hypothetical price series must be labelled as hypothetical
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - sessions/week-06
 ---
@@ -25,19 +24,16 @@ import PriceHistoryChart from "../../components/interactive/PriceHistoryChart.as
 
 > Can today's price be judged without knowing yesterday's price?
 
-Week 3 asked where a reference price came from. This week generalises the
-question: instead of one prior number, look at the whole series. A price is
-better modelled as `P(t)` — a function of time — than as a constant with an
-occasional discount applied to it.
+Week 3 asked where one "was" price came from. This week asks for the whole
+price history. A price is not fixed; it moves over time.
 
 ## Baselines, medians, and volatility
 
-- A **baseline** built from one past price (as in Week 3) is fragile: it can
-  be cherry-picked to flatter almost any current price.
-- A **median** over a longer window is harder to game, because moving it
-  requires moving many prices, not printing one convenient one.
-- **Volatility** — how much the price moves around that median — tells you
-  whether today's number is typical or an outlier, in either direction.
+- A **baseline** built from one past price can be cherry-picked.
+- A **median** over a longer period is harder to fake, because it uses many
+  prices, not one convenient number.
+- **Volatility** means how much the price moves around. It helps you see
+  whether today's number is normal or unusual.
 
 A price that has sat at $249 for eleven of the last twelve months and spiked
 to $299 once is a very different object from a price that has bounced
@@ -116,9 +112,8 @@ representations made the outlier easier to find, and why?
 
 ## What you should leave knowing
 
-A single price is one sample from a series; a fair judgement about whether
-it's a good number requires the series, or an honest admission that the
-series isn't available.
+A single price is one point in a price history. To judge it fairly, you need
+the history, or you need to admit that the history is missing.
 
 <hr class="receipt-divider" />
 

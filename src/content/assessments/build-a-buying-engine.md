@@ -1,8 +1,8 @@
 ---
 title: "Assessment 3 — Build a Buying Engine"
 description:
-  The capstone. Combine the semester's ideas into a decision-support system
-  that explains its recommendation instead of just outputting a number.
+  The final project. Build a small buying tool that explains its advice
+  instead of just outputting a number.
 week: 12
 due: 2026-10-23T12:00:00+10:00
 weight: 50
@@ -12,27 +12,24 @@ marking:
     - name: Scope and input design
       weight: 25
       description:
-        Chooses at least five relevant input categories from the semester and
-        defines them precisely enough that their units, assumptions and limits
-        are clear.
-    - name: Recommendation logic and internal consistency
+        Chooses at least five useful input types from the course and defines
+        them clearly, including units, assumptions and limits.
+    - name: Recommendation logic and consistency
       weight: 30
       description:
-        Produces one of the named recommendation categories through a coherent
-        model whose outputs change sensibly when price, urgency, uncertainty,
-        time cost or alternatives change.
-    - name: Explanation, transparency and example runs
+        Gives one of the named recommendations using rules that stay consistent
+        when price, urgency, uncertainty, time cost or alternatives change.
+    - name: Explanation and example runs
       weight: 25
       description:
-        Shows intermediate calculations or reasoning, includes example runs
-        covering at least three recommendation categories, and identifies what
-        would flip each recommendation.
+        Shows the steps behind the answer, includes example runs for at least
+        three recommendation categories, and names what would change each
+        answer.
     - name: Assumptions, limitations and responsible caveats
       weight: 20
       description:
-        Labels hypothetical inputs, avoids claiming universal correctness, and
-        names important factors the model does not handle rather than hiding
-        them.
+        Labels invented inputs, avoids claiming the tool is right for everyone,
+        and names important factors the tool does not handle.
 spec:
   - submitted by the deadline, in the format named below
   - accepts at least five distinct input categories from the semester's material
@@ -47,9 +44,8 @@ related:
 
 ## The brief
 
-> Build a system that takes in the kind of information this semester has
-> spent twelve weeks arguing you need, and produces a purchase
-> recommendation it can explain.
+> Build a system that takes the kind of information this course has spent
+> twelve weeks collecting, then gives buying advice it can explain.
 
 Possible inputs to support: current price, historical price range, urgency,
 probability and size of a possible future discount, used/alternative
@@ -64,16 +60,15 @@ to change for the recommendation to flip. A system that outputs a
 recommendation with no visible reasoning does not meet this brief, no matter
 how accurate it turns out to be.
 
-This is explicitly not a search for one universally correct answer. Two
-reasonable systems, given the same inputs but different assumptions about
-risk or the value of time, may recommend different things — the mark is on
-whether each system's own reasoning is transparent and internally
-consistent, not on whether it agrees with any other system.
+This is not a search for one correct answer for everyone. Two sensible tools
+may give different advice if they value risk or time differently. The mark is
+for whether your tool's reasoning is visible and consistent, not whether it
+matches another student's answer.
 
 The expected-value reasoning for the WAIT recommendation comes directly from
-[Week 10](/sessions/week-10/), and the whole engine is the synthesis
-[Week 12](/sessions/week-12/) argues for: a decision that shows its work
-rather than a single number.
+[Week 10](/sessions/week-10/). The whole engine is the final combined
+decision [Week 12](/sessions/week-12/) argues for: advice that shows its
+work rather than a single number.
 
 ## Minimum viable engine
 
@@ -88,9 +83,9 @@ good small scope might use:
 - reward-point value after restrictions
 - recurring or follow-on costs
 
-It does not have to be an app with a polished interface. A notebook,
-spreadsheet, command-line script, or small web tool can all work if the
-model is inspectable and the output explains itself.
+It does not have to be a polished app. A notebook, spreadsheet, command-line
+script, or small web tool can all work if the model can be inspected and the
+output explains itself.
 
 ## Example runs
 
@@ -99,7 +94,7 @@ categories, such as **BUY NOW**, **WAIT**, and **BUY USED**. For each run,
 show:
 
 - the input values
-- the intermediate quantities your model calculated
+- the key numbers your model calculated on the way
 - the final recommendation
 - the factor that would most easily flip the recommendation
 
@@ -109,10 +104,9 @@ real retailer.
 
 ## What you submit
 
-A working artefact (a small application, a notebook, a structured
-spreadsheet with real formulas — the format is your choice, provided the
-reasoning is inspectable) plus a short written explanation of the model's
-assumptions and its limits. State clearly which example inputs are
+A working piece of work (a small app, notebook, spreadsheet with formulas,
+command-line script, or similar) plus a short written explanation of the
+model's assumptions and limits. State clearly which example inputs are
 hypothetical.
 
 Your written explanation should name the trade-offs the model can handle and
@@ -122,16 +116,16 @@ worse than choosing a smaller honest scope.
 
 ## What strong work looks like
 
-Strong work behaves less like a price sorter and more like a decision memo.
-It can recommend paying more when urgency, risk or time cost justifies it,
-and it can explain why. It also exposes the model's assumptions: changing the
-value of time, risk tolerance or probability of a future discount should make
-the recommendation shift in a way the reader can follow.
+Strong work behaves less like a price sorter and more like a short decision
+memo. It can recommend paying more when urgency, risk or time cost makes that
+the better choice, and it can explain why. If the value of time, risk
+tolerance or chance of a future discount changes, the recommendation should
+shift in a way the reader can follow.
 
 ## Common traps
 
 - building a lowest-price finder and calling it a buying engine
 - accepting many inputs but using only one or two of them in the decision
-- outputting a recommendation without showing intermediate reasoning
+- outputting a recommendation without showing the steps behind it
 - treating hypothetical inputs as if they were measured facts
 - claiming the system is objectively correct for every buyer

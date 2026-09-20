@@ -14,7 +14,7 @@ spec:
   - names at least four different things "price" can mean for the same product
   - states the semester's running scenario and its opening price
   - does not treat the sticker price as self-evidently the whole answer
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - lectures/week-01
   - assessments/deal-autopsy
@@ -24,8 +24,8 @@ related:
 
 > Does a product have one true price?
 
-Walk into any shop and a single object seems to carry a single number. It
-doesn't. The same pair of headphones can simultaneously have:
+Walk into a shop and one product seems to have one price. It doesn't. The
+same pair of headphones can have several prices at once:
 
 - a **sticker price** — the number printed on the tag today
 - a **reference price** — a higher number ("was $329") the sticker is set
@@ -36,8 +36,8 @@ doesn't. The same pair of headphones can simultaneously have:
 - a **willingness to pay** — the most a specific buyer would hand over before
   walking away, which has nothing to do with the tag at all
 
-None of these is fake. They are five different measurements of the same
-object, and a retailer chooses which one to print in large type.
+None of these numbers has to be fake. They are different ways to talk about
+the same product, and the retailer chooses which one to make loud.
 
 ## Comparison framing
 
@@ -47,12 +47,10 @@ Consider two identical-looking deals:
   <span class="price-now">$100</span> — 50% off
 - **B:** <span class="price-now price-now--good">$95</span>, no discount shown
 
-Most people's first instinct is that A is the better deal, because "50% off"
-is the loudest number on the page. But B is cheaper. The 50% figure is doing
-work on the reader that the price itself doesn't justify — it's measuring the
-gap to a reference price, not the gap to the next-best alternative. Holding
-these two framings apart is most of what this course is about: the number you
-compute is only as good as the thing you're computing it relative to.
+Most people's first instinct is that A is better, because "50% off" is the
+loudest number on the page. But B costs less. The 50% figure is comparing A
+with its own "was" price, not with the next-best option. Much of this course
+is about asking a simple question: compared to what?
 
 ## The $249 headphones
 
@@ -61,8 +59,8 @@ priced at **$249**. Every week adds one more piece of information that changes
 how "$249" should be read — a bundle, a reference price, a price history, a
 loyalty scheme, a resale market, a possible future sale. Today, $249 is all we
 know, and that is exactly the trap: a single number, with no context attached,
-looks like a fact. By Week 12 it will look like the least interesting part of
-the decision.
+looks like the whole answer. By Week 12 it will look like only one small part
+of the decision.
 
 <p class="caveat">The headphones, their $249 price, and every number attached
 to them over the next twelve weeks are invented for teaching. No real product
@@ -95,9 +93,8 @@ invisible on the tag? Be ready to defend your answer in one sentence.
 
 ## What you should leave knowing
 
-A price is not one fact about a product; it is a choice about which of
-several true numbers to print in the largest font. Every later week attacks
-a different one of those five numbers.
+A price is not one fact about a product. It is a choice about which number to
+print in the largest font. Every later week questions one of those numbers.
 
 <hr class="receipt-divider" />
 

@@ -1,8 +1,8 @@
 ---
 title: "Lecture 3 — Coupons Are Algorithms"
 description:
-  Thresholds, exclusions, stacking and bundles as small functions with
-  explicit inputs — worked through live on three carts, one of them a trap.
+  Thresholds, exclusions, stacking and bundles as rules with clear inputs —
+  worked through live on three carts, one of them a trap.
 week: 4
 date: 2026-08-17
 teachers:
@@ -14,15 +14,15 @@ related:
 ---
 
 This lecture is the live version of [Week 4](/sessions/week-04/): every
-discount rule modelled as a function with explicit inputs and a condition,
-not a trick to be discovered. The deck adds two worked examples the week
-page only summarises — a threshold that costs more to satisfy than it
-saves, and a bundle that looks generous and isn't — before handing the
-class a small cart to optimise themselves.
+discount rule is written down with clear inputs and conditions, instead of
+treated as a trick to guess. The deck adds two worked examples the week page
+only summarises — a threshold that costs more to satisfy than it saves, and
+a bundle that looks generous and isn't — before handing the class a small
+cart to solve themselves.
 
 ## Outline
 
-- why a coupon rule is a function: inputs in, a discount or a refusal out
+- why a coupon rule needs clear inputs: cart in, discount or refusal out
 - thresholds, exclusions, stacking and bundles, one at a time
 - worked example: a simple cart with one rule
 - worked example: the threshold trap, where satisfying a minimum spend

@@ -1,7 +1,7 @@
 ---
 title: Idris Fenn
 description:
-  Teaches the CALCULATE-heavy middle of the semester — coupons, dynamic
+  Teaches the numbers-heavy middle of the semester — coupons, dynamic
   pricing, subscriptions and points — and builds most of the worked examples.
 affiliation: Slop University School of Invented Disciplines
 role: tutor
@@ -16,10 +16,10 @@ related:
 ---
 
 Idris teaches the even-numbered weeks, which is most of the course's
-computational middle: coupon stacking, dynamic pricing, subscriptions, and
+numbers-heavy middle: coupon stacking, dynamic pricing, subscriptions, and
 loyalty points. He's the one who insists every discount rule gets written
-down as an explicit function before anyone is allowed to call it "obviously
-a good deal", and marks Assessment 2 with that same insistence.
+down clearly before anyone is allowed to call it "obviously a good deal",
+and marks Assessment 2 with that same standard.
 
 Reachable by email between sessions; questions about a specific week's
 calculator are best asked live, so the fix (or the "that's intentional")

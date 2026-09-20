@@ -2,8 +2,8 @@
 title: "Assessment 2 — Beat the Shopping Cart"
 description:
   A constrained shopping scenario with thresholds, coupons, exclusions and
-  bundles. Find a defensible strategy, and don't buy your way into a
-  worse outcome.
+  bundles. Find the best plan without buying extra things just to chase a
+  discount.
 week: 8
 due: 2026-09-25T12:00:00+10:00
 weight: 30
@@ -13,27 +13,26 @@ marking:
     - name: Correct modelling of every rule in the scenario
       weight: 35
       description:
-        Turns each coupon, exclusion, bundle, shipping rule and loyalty rule
-        into an explicit condition with inputs and outputs, including the order
-        in which rules are applied.
-    - name: Defensibility of the chosen strategy
+        Writes each coupon, exclusion, bundle, shipping rule and loyalty rule
+        as a clear if-this-then-that rule, including the order the rules apply.
+    - name: How well the chosen strategy is justified
       weight: 35
       description:
-        Compares at least three plausible carts using the same effective-cost
-        model and justifies the recommendation by total cost, not by the size
-        of the advertised discount.
+        Compares at least three possible carts using the same true-cost method,
+        then recommends the cart with the best total result, not the biggest
+        advertised discount.
     - name: Clarity of the written or coded reasoning
       weight: 30
       description:
-        Presents the model so another student could reproduce it, with clear
-        assumptions, readable tables or code, and a short explanation of why
-        the losing strategies lose.
+        Shows the working clearly enough that another student could repeat it,
+        using readable tables or code and a short explanation of why the other
+        options lose.
 spec:
   - submitted by the deadline, in the format named below
   - models every discount rule in the scenario explicitly, including exclusions
-  - compares at least three plausible strategies using the same effective-cost model
+  - compares at least three plausible strategies using the same true-cost method
   - identifies at least one combination that appears to save money but doesn't
-  - the final strategy is justified against the actual effective cost, not the advertised discount
+  - the final strategy is justified against the true cost, not the advertised discount
 related:
   - sessions/week-04
   - sessions/week-08
@@ -41,15 +40,14 @@ related:
 
 ## The brief
 
-> Given a shopping cart, a set of overlapping discount rules, and a fixed set
-> of needed items, find the cheapest defensible way to buy them.
+> Given a shopping cart, several discount rules, and a fixed list of needed
+> items, find the best way to buy them.
 
 You'll be given (or will construct, if working from a real storefront) a
 scenario containing several of: a spend threshold, a percentage coupon with
 exclusions, a bundle offer, a free-shipping cutoff, and a loyalty-points
-rate. Work out the actual effective cost of at least three plausible
-strategies for acquiring the needed items, including the "obvious" one a
-shopper would try first.
+rate. Work out the true cost of at least three possible strategies for getting
+the needed items, including the "obvious" one a shopper would try first.
 
 The scenario is built so that at least one strategy that *looks* like a
 bigger discount is actually a worse outcome once you account for items
@@ -58,8 +56,8 @@ to unlock a bigger advertised discount, should not be counted as "saving
 money" unless you can show the item had real value to you independent of
 the coupon.
 
-This assessment is [Week 4](/sessions/week-04/)'s rule-as-function reasoning
-applied under exam conditions rather than in a worked example.
+This assessment applies [Week 4](/sessions/week-04/)'s if-this-then-that
+rule thinking to a cart you have to solve yourself.
 
 ## Scenario packet
 
@@ -76,7 +74,7 @@ rule sheet before you solve it. It should contain:
   much
 
 If you use a real storefront, cite it. If you invent a scenario, label it
-hypothetical and make the numbers internally consistent.
+hypothetical and make the numbers consistent with each other.
 
 ## Required model
 
@@ -84,21 +82,20 @@ Compare at least three strategies in the same table or script:
 
 - the obvious cart a hurried shopper would try first
 - the cheapest cart that satisfies the headline discount
-- one alternative that refuses a tempting discount because the effective cost
-  is worse
+- one alternative that refuses a tempting discount because the true cost is
+  worse
 
 For each strategy, show item subtotal, excluded subtotal, discount applied,
-shipping or points value if relevant, unwanted add-on cost, and final
-effective cost. A strategy that buys an unwanted item should count the wasted
-part as cost, even if the checkout total is lower.
+shipping or points value if relevant, unwanted add-on cost, and final true
+cost. A strategy that buys an unwanted item should count the wasted part as
+cost, even if the checkout total is lower.
 
 ## What you submit
 
-Either a written strategy comparison (tables of the modelled options and
-their effective costs) or a small script that computes effective cost given
-the rules as structured input — either is acceptable, and the marking
-weights reasoning over implementation medium. State your final recommended
-strategy and the effective cost it produces.
+Either a written strategy comparison (tables are fine) or a small script that
+computes true cost from the rules. Either format is acceptable; the mark is
+for the reasoning, not for choosing code over writing. State your final
+recommended strategy and the true cost it produces.
 
 Include a short note explaining why the losing strategies lose. The goal is
 not only to name the cheapest cart; it is to show which rule made the
@@ -106,11 +103,11 @@ advertised bargain stop being a bargain.
 
 ## What strong work looks like
 
-Strong work makes each rule executable: the reader can see the inputs, the
-condition, and the output. It notices order-of-operations questions, such as
-whether a coupon applies before or after sale-item exclusions, and handles
-them explicitly. The final recommendation should still make sense if the
-advertised badge is hidden and only the effective-cost table remains.
+Strong work makes each rule usable: the reader can see the input, the
+condition, and the result. It notices ordering questions, such as whether a
+coupon applies before or after sale-item exclusions. The final recommendation
+should still make sense if the sale badges are hidden and only your cost table
+remains.
 
 ## Common traps
 
@@ -119,5 +116,4 @@ advertised badge is hidden and only the effective-cost table remains.
 - counting loyalty points at face value when redemption is restricted
 - adding an item to clear a threshold, then treating that item as free
 - comparing strategies with different assumptions
-- choosing the cart with the largest discount instead of the lowest
-  defensible effective cost
+- choosing the cart with the largest discount instead of the lowest true cost

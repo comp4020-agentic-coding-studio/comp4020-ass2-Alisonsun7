@@ -1,8 +1,8 @@
 ---
 title: "Week 6 — The Price Is Watching You"
 description:
-  Dynamic pricing, segmentation and personalisation mean the price on your
-  screen may not be the price on anyone else's.
+  Some prices change by time, place, demand or shopper. The price on your
+  screen may not be the price on someone else's.
 week: 6
 date: 2026-08-31
 teachers:
@@ -13,7 +13,7 @@ spec:
   - distinguishes demand-sensitive pricing from personalised pricing
   - discusses dynamic pricing without attributing specific practices to a named real company
   - explains price discrimination as a pricing concept, not as a legal accusation
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - sessions/week-07
 ---
@@ -22,37 +22,30 @@ related:
 
 > What happens when price changes in response to people and context?
 
-Week 5 treated price as a function of time, `P(t)`. This week adds more
-inputs: `P(t, context)`, where context might be demand, device, location, or
-browsing history. The number on the screen stops being a single fact about
-the product and starts being a live output of a model whose other inputs you
-usually can't see.
+Week 5 looked at price changing over time. This week adds other possible
+inputs: demand, device, location, login state or browsing history. The number
+on the screen may be one result from a pricing system whose other inputs you
+cannot see.
 
 ## Demand-sensitive pricing vs personalisation
 
-These are different mechanisms and worth keeping separate:
+These ideas are easy to mix up, so keep them separate:
 
-- **Demand-sensitive pricing** reacts to aggregate conditions — everyone
-  sees a higher price when demand or costs spike, e.g. a ride-share surge.
+- **Demand-sensitive pricing** reacts to overall conditions — everyone may
+  see a higher price when demand or costs rise, e.g. a ride-share surge.
   It doesn't require knowing who *you* are.
-- **Personalisation / segmentation** varies price by *inferred group* or
-  *individual* — the same seat, shown to two different accounts, at two
-  different prices, based on signals like device, location, or past
-  behaviour.
-- **Price discrimination**, in the economic sense, is the umbrella term for
-  charging different prices to different buyers for the same good based on
-  their willingness to pay. It is a description of a pricing strategy, used
-  here as a technical term, not an accusation against any named company.
+- **Personalisation / segmentation** changes price by group or individual:
+  for example, two accounts seeing different prices for the same seat.
+- **Price discrimination** is the economics term for charging different
+  buyers different prices for the same thing. Here it is a technical term,
+  not an accusation against any named company.
 
 ## Handling evidence carefully
 
-This course does not claim to know which real platforms use which of these
-mechanisms, or when. Specific, unverifiable claims about a named company's
-internal pricing system are exactly the kind of statement this course must
-avoid fabricating. Where a mechanism needs illustrating, the example is
-built from a **hypothetical** storefront, clearly marked as such — see
-[Policies](/policies/#hypothetical-vs-sourced-examples) for the course-wide
-rule this follows.
+This course does not claim to know which real platforms use which pricing
+systems. If we cannot verify a claim about a named company, we do not make
+it. When we need an example, we use a clearly labelled **hypothetical**
+storefront — see [Policies](/policies/#hypothetical-vs-sourced-examples).
 
 ## Why it matters for a buyer
 
@@ -85,7 +78,7 @@ By the end of this week, you should be able to:
   accusation
 - explain why a single quoted price should be treated as one sample from a
   distribution
-- state this course's evidence rule for discussing pricing mechanisms
+- state this course's evidence rule for discussing pricing systems
   without naming a real company
 - identify which inputs, besides time, a price might be responding to in a
   given scenario
@@ -100,16 +93,15 @@ result — the point is running the check, not finding a dramatic gap.
 ## In class
 
 Given a short hypothetical scenario describing a price that varies by
-device, location, or login state, classify the mechanism as
+device, location, or login state, classify the pricing system as
 demand-sensitive, personalised, or ambiguous from the evidence given — and
 say what additional evidence would resolve the ambiguity.
 
 ## What you should leave knowing
 
-Once price can depend on inputs you don't control or see, the number on
-your screen is a sample, not a fact — and this course's rule against
-naming a real company's pricing system without a source applies precisely
-because that uncertainty is easy to overstate into an accusation.
+Once price can depend on things you cannot see, the number on your screen is
+one sample, not the whole truth. That is why this course does not name a real
+company's pricing system without a source.
 
 <hr class="receipt-divider" />
 

@@ -1,8 +1,8 @@
 ---
 title: "Week 11 — Your Time Has a Price"
 description:
-  Search, travel and waiting all cost time, and time has an opportunity
-  cost. This week builds a calculator that weighs it against expected savings.
+  Search, travel and waiting all take time. This week builds a calculator
+  that weighs time spent against possible savings.
 week: 11
 date: 2026-10-05
 teachers:
@@ -10,10 +10,10 @@ teachers:
 tags: ["stage-decide", "opportunity-cost"]
 buildsOn: [9, 10]
 spec:
-  - defines opportunity cost of time using an explicit value-per-hour figure
-  - treats hours already spent searching as a sunk cost excluded from the forward decision
+  - defines the cost of time using a clear value-per-hour figure
+  - treats hours already spent searching as gone, so they do not affect the next decision
   - includes a working buy-or-wait tool whose recommendation is explained, not just stated
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - sessions/week-12
 ---
@@ -22,12 +22,12 @@ import BuyOrWaitTool from "../../components/interactive/BuyOrWaitTool.astro";
 
 ## Core question
 
-> How much effort is it rational to spend in order to save money?
+> How much effort is worth spending to save money?
 
 Week 10 priced the *uncertainty* of waiting. This week prices the *time*
 waiting takes. Search cost, travel cost, and time spent watching for a
-lower price are all real costs — they just aren't denominated in dollars
-until you choose a value for your own hour.
+lower price are all real costs. They become easier to compare once you put
+a dollar value on an hour of your own time.
 
 ## Opportunity cost of time
 
@@ -35,16 +35,15 @@ If your time is worth $20/hour doing anything else you'd rather be doing,
 then two hours spent comparison-shopping to save $15 has already lost money
 before you've bought anything: $40 of time against $15 of saving. This isn't
 a claim that comparison-shopping is pointless — it's a claim that it has a
-break-even point, and that point is calculable.
+point where it stops being worth it.
 
 ## The sunk-cost trap
 
 Hours already spent searching feel like they should count toward the
 decision — "I've already spent three hours on this, I might as well keep
 going" — but they are a **sunk cost**: spent regardless of what you decide
-next, and therefore irrelevant to what you should decide next. The only
-hours that belong in the forward-looking calculation are the ones you
-haven't spent yet.
+next. The only hours that matter for the next decision are the hours you
+have not spent yet.
 
 ## A working example
 
@@ -73,7 +72,7 @@ By the end of this week, you should be able to:
 
 - compute the opportunity cost of time given a stated value per hour
 - explain why hours already spent searching are a sunk cost excluded from
-  the forward decision
+  the next decision
 - use the buy-or-wait tool to see how the recommendation changes as one
   input changes at a time
 - combine Week 10's expected-value framing with a time cost to reach a

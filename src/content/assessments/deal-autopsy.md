@@ -1,8 +1,8 @@
 ---
 title: "Assessment 1 — Deal Autopsy"
 description:
-  Investigate one real promotion and show, with evidence, why it is or isn't
-  the deal it presents itself as.
+  Pick one real promotion and show, with evidence, whether it is actually a
+  good deal.
 week: 3
 due: 2026-08-21T12:00:00+10:00
 weight: 20
@@ -12,21 +12,20 @@ marking:
     - name: Identification of claim, reference price and restrictions
       weight: 40
       description:
-        Separates the advertised claim, the reference price, the source evidence
-        and every visible restriction instead of blending them into one
-        "deal" description.
+        Clearly names the headline claim, the "was" price or other comparison
+        number, the source you used, and any visible conditions or limits.
     - name: Calculation of actual effective saving
       weight: 30
       description:
-        Shows the arithmetic in dollars, handles missing information as labelled
-        assumptions, and adjusts for restrictions such as shipping, minimum
-        spend, expiry or membership conditions.
+        Shows the dollar calculation, labels any guessed number as an
+        assumption, and includes costs or limits such as shipping, minimum
+        spend, expiry or membership rules.
     - name: Evidence-based final judgement
       weight: 30
       description:
-        Reaches a conclusion that follows from the evidence and calculation,
-        including saying "undecidable" when the promotion does not provide
-        enough information to support a stronger claim.
+        Gives a final answer that follows from the evidence. If the promotion
+        does not give enough information, says that plainly instead of
+        pretending to know more than you do.
 spec:
   - submitted by the deadline, in the format named below
   - names the advertised claim, the reference price, and any restrictions separately
@@ -53,16 +52,15 @@ Identify:
 - the actual effective saving, computed, not eyeballed
 - which framing techniques from Week 3 are doing work on the reader
 
-Then reach a judgement: is this a genuinely good price, a mediocre one
-dressed up, or something in between — and say exactly what evidence gets you
-there. "Marketing is misleading" is not a conclusion this brief accepts on
-its own; you have to show the arithmetic that makes it true or false for
-this specific promotion.
+Then answer the real question: is this genuinely good, just ordinary with a
+loud badge, or impossible to tell from the available information? "Marketing
+is misleading" is not enough by itself. Show the numbers that make that true
+or false for this promotion.
 
 ## Evidence packet
 
-Your chosen promotion should be specific enough that another student could
-reconstruct your reasoning. Include:
+Choose a promotion specific enough that another student could check your work.
+Include:
 
 - a screenshot or link showing the advertised claim
 - the date you captured it
@@ -82,7 +80,7 @@ Use this structure unless you have a stronger one:
 
 1. **Claim:** what the advertisement wants the shopper to believe.
 2. **Baseline:** what price the claim is measured against, and whether that
-   baseline is recent, rarely-real, unverifiable, or missing.
+   baseline is recent, rarely used, impossible to check, or missing.
 3. **Restrictions:** what conditions change the apparent saving.
 4. **Calculation:** the effective saving in dollars, including fees or
    threshold spending where relevant.
@@ -99,12 +97,10 @@ as the retailer's own figure.
 
 ## What strong work looks like
 
-Strong work separates what is known from what is inferred. It does not simply
-say "50% off is misleading"; it shows which denominator the 50% used, whether
-that denominator is trustworthy, and how much money a buyer would actually
-save under the stated restrictions. The best autopsies also notice when the
-available evidence is insufficient and say so clearly rather than forcing a
-larger conclusion.
+Strong work separates facts from guesses. It does not simply say "50% off is
+misleading"; it shows what price the 50% was measured against, whether that
+price can be trusted, and how much money a buyer would actually save. The best
+autopsies also say clearly when the evidence is too thin for a strong answer.
 
 ## Common traps
 

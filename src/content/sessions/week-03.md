@@ -11,9 +11,9 @@ tags: ["stage-see", "reference-price"]
 buildsOn: [1, 2]
 spec:
   - defines reference price and distinguishes it from market price
-  - explains anchoring in terms of the reference-price mechanism, not just by name
+  - explains how anchoring works with reference prices, not just by name
   - states that discount percentage and money saved are not interchangeable
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - lectures/week-02
   - assessments/deal-autopsy
@@ -23,32 +23,29 @@ related:
 
 > What is a discount being measured against?
 
-"50% off" is a ratio. A ratio needs a denominator. The denominator on a sale
-tag is the **reference price** — a number the retailer chose to print, which
-may or may not correspond to a price anyone ever actually paid. Week 1's
-Option A ("was $200, now $100") used exactly this mechanism: the badge is
-honest about the arithmetic (200 to 100 is indeed 50%) and silent about
-where 200 came from.
+"50% off" compares two numbers. The first is the sale price. The second is
+the **reference price**: the "was" price or other number the retailer chose
+to print. That reference price may or may not be a price anyone really paid.
+Week 1's Option A ("was $200, now $100") used exactly this trick: the maths
+is right, but the page does not tell us where $200 came from.
 
 ## Anchoring
 
-Anchoring is the general version of the effect: the first number you see
-changes how you judge every number after it, even when the first number is
-irrelevant or invented. A reference price is anchoring with a dollar sign —
-it doesn't need to be false to work, it only needs to be seen first.
+Anchoring is the wider effect: the first number you see changes how you judge
+the next number. A reference price is anchoring with a dollar sign. It does
+not need to be false to work; it only needs to be seen first.
 
 ## Historical baselines vs invented ones
 
 A reference price can be:
 
-- a genuine recent price the item sold at (a real baseline)
-- a manufacturer's suggested price nobody charges (a rarely-real baseline)
-- a number with no traceable origin at all (an invented baseline)
+- a genuine recent price the item sold at
+- a manufacturer's suggested price that few shops use
+- a number with no clear source at all
 
-The percentage-off badge looks identical in all three cases. Telling them
-apart requires the kind of price history this course reaches formally in
-Week 5 — for now, the discipline is just to ask "was $X — according to whom,
-and when?" before treating a discount as informative.
+The percentage-off badge can look the same in all three cases. For now, ask
+"was $X according to whom, and when?" before treating a discount as useful
+information.
 
 ## Percentage vs money
 
@@ -79,7 +76,7 @@ price.</p>
 By the end of this week, you should be able to:
 
 - define reference price and distinguish it from market price
-- explain anchoring as a mechanism, not just name it
+- explain how anchoring works, not just name it
 - classify a reference price as genuine, rarely-real, or invented
 - compute money saved from a percentage discount, not just quote the
   percentage
@@ -102,9 +99,9 @@ or down that scale.
 
 ## What you should leave knowing
 
-"X% off" is a ratio, and a ratio is only informative once you trust its
-denominator; percentage-off and money-saved are different numbers, and a
-badge only ever prints one of them.
+"X% off" only helps once you trust the number it is measured against.
+Percentage off and money saved are different numbers, and the badge usually
+prints only one of them.
 
 <hr class="receipt-divider" />
 

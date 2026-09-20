@@ -73,19 +73,19 @@
 
       if (!verdict) return;
       if (![price, chance, size, days, searchHours, valuePerHour].every(Number.isFinite)) {
-        verdict.textContent = "Fill in every field to get a recommendation.";
+        verdict.textContent = "Fill in every field to get an answer.";
         verdict.dataset.verdictKind = "";
         return;
       }
 
       if (days < 1) {
         verdict.textContent =
-          "BUY NOW — there's no time left to wait, so a hypothetical future deal can't help you.";
+          "BUY NOW — there's no time left to wait, so a possible future deal can't help you.";
         verdict.dataset.verdictKind = "buy";
       } else if (net > 2) {
         verdict.textContent =
           `WAIT — waiting is worth about ${money(net)} more than buying today, after paying for the time it costs. ` +
-          "Hours already spent researching are a sunk cost: real, but irrelevant to this decision.";
+          "Hours already spent researching are gone either way, so they do not change this decision.";
         verdict.dataset.verdictKind = "wait";
       } else if (net < -2) {
         verdict.textContent =
@@ -95,7 +95,7 @@
       } else {
         verdict.textContent =
           "IT DEPENDS — the expected savings and the cost of waiting are close enough that this comes down to " +
-          "how much you personally dislike uncertainty, not to the arithmetic.";
+          "how much you personally dislike uncertainty, not to the math alone.";
         verdict.dataset.verdictKind = "depends";
       }
     }

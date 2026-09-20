@@ -1,9 +1,9 @@
 ---
 title: "Week 12 — Sometimes Pay Full Price"
 description:
-  The semester's synthesis. Price, time, uncertainty, urgency, waste,
-  alternatives, risk and personal priorities combine into one decision —
-  and the lowest number does not automatically win it.
+  The final week brings everything together. Price, time, risk, waste,
+  alternatives and personal priorities all matter, so the lowest number does
+  not automatically win.
 week: 12
 date: 2026-10-12
 teachers:
@@ -12,17 +12,17 @@ teachers:
 tags: ["stage-decide", "synthesis"]
 buildsOn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 spec:
-  - synthesises at least five prior weeks' concepts into a single decision framework
+  - combines at least five prior weeks' concepts into a single decision framework
   - explicitly rejects "always find the lowest price" as the course's conclusion
-  - states the actual conclusion in terms of information, constraints and values
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - states the actual conclusion in terms of information, limits and values
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - assessments/build-a-buying-engine
 ---
 
 ## Core question
 
-> What should a rational buying decision actually optimise?
+> What should a smart buying decision actually focus on?
 
 Eleven weeks have added one complication at a time to a single number: what
 "$249" means (Week 1), what quantity actually gets used (Week 2), what the
@@ -37,7 +37,7 @@ None of those weeks said "ignore the price". Each said "the price is not
 the only number in this decision, and sometimes it isn't even the most
 important one."
 
-## The synthesis
+## Bringing it together
 
 A complete purchase decision weighs, at minimum:
 
@@ -63,14 +63,13 @@ If the semester has a single takeaway, it is not:
 It's closer to:
 
 > A good purchase is not necessarily the one with the lowest sticker price.
-> It is the best decision given the information, constraints, and values
+> It is the best decision given the information, limits, and values
 > that actually matter.
 
 Sometimes that decision is the cheapest option. Sometimes it's paying full
 price for the option that arrives today, from a seller you trust, with no
-30-day gamble attached — and that is not a failure to optimise. It's what
-optimising the right thing actually looks like once "the right thing" stops
-meaning "the smallest number".
+30-day gamble attached. That is not a mistake; it may simply be the option
+that fits the real situation best.
 
 ## The $249 headphones, decided
 
@@ -80,7 +79,7 @@ used alternative, the possible future sale, the hours already spent
 searching (and correctly ignored). None of it produces a single universally
 correct answer — that was never the goal. What it produces is a buyer who
 can say exactly why they bought what they bought, at the price they paid,
-and defend every part of that reasoning.
+and explain every part of that reasoning.
 
 <p class="caveat">Every figure in the headphones scenario, from Week 1's $249
 to Week 9's $140 used listing, was invented for teaching. The reasoning
@@ -90,15 +89,14 @@ transfers to real purchases; the numbers do not.</p>
 
 By the end of this week, you should be able to:
 
-- synthesise at least five prior weeks' concepts into a single purchase
+- combine at least five prior weeks' concepts into a single purchase
   decision
 - explain why "always find the lowest price" is not this course's
   conclusion
-- state the actual conclusion in terms of information, constraints, and
-  values
+- state the actual conclusion in terms of information, limits, and values
 - identify, for a specific purchase, which of the semester's factors are
-  most load-bearing and which are negligible
-- defend a purchase decision's reasoning, not just its outcome
+  most important and which barely matter
+- explain a purchase decision's reasoning, not just its outcome
 
 ## Before class
 
@@ -117,7 +115,7 @@ doesn't carry real weight for this specific decision — then swap roles.
 ## What you should leave knowing
 
 A good purchase decision is not the one with the lowest number; it's the
-one whose reasoning you can state completely and defend, using exactly the
+one whose reasoning you can explain clearly, using exactly the
 factors that actually apply to it and no others.
 
 <hr class="receipt-divider" />

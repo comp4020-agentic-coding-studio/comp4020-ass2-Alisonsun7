@@ -17,7 +17,7 @@ Marisol designed How to Never Pay Full Price after noticing that most
 it's measured against. She teaches the odd-numbered weeks — the SEE and
 DECIDE ends of the semester — and holds the line on the course's one rule:
 no claim about a real company's pricing goes in without a source, and no
-invented number goes in without being labelled invented.
+invented number goes in without being clearly labelled invented.
 
 Office hours are announced at the start of each teaching block. For
 anything that can wait, email is faster than dropping by.

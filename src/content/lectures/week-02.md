@@ -16,8 +16,8 @@ related:
 This lecture spans two weeks of material because they're one argument in two
 parts: [Week 2](/sessions/week-02/) establishes that a lower unit price only
 helps if the quantity behind it gets used, and [Week 3](/sessions/week-03/)
-asks the same question about discounts — a percentage is only informative if
-you know, and trust, what it was measured against.
+asks the same question about discounts — a percentage only helps if you know,
+and trust, the number it was measured against.
 
 ## Outline
 

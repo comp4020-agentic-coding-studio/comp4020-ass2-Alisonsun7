@@ -17,7 +17,7 @@ This lecture is the live version of [Week 1](/sessions/week-01/): the same
 five readings of "price" (sticker, reference, sale, market, willingness to
 pay), the same was-$200-now-$100-vs-$95 comparison, and the first mention of
 the headphones this course spends the rest of the semester pricing properly.
-The deck below carries the argument; the week page carries the detail and
+The deck below gives the main argument; the week page gives the detail and
 the worked example.
 
 ## Outline

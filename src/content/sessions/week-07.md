@@ -1,8 +1,9 @@
 ---
 title: "Week 7 — The Price That Never Stops"
 description:
-  A small recurring charge is deceptively hard to reason about. This week
-  covers subscriptions, introductory pricing, inertia and cost per actual use.
+  Small monthly charges are easy to underestimate. This week covers
+  subscriptions, cheap first-month offers, forgetting to cancel, cancellation
+  friction, and cost per actual use.
 week: 7
 date: 2026-09-07
 teachers:
@@ -10,54 +11,53 @@ teachers:
 tags: ["stage-calculate", "subscriptions"]
 buildsOn: [2, 5]
 spec:
-  - computes an annualised cost from a recurring charge, not just the per-period figure
-  - explains inertia and cancellation friction as distinct mechanisms
-  - reuses the usable-quantity idea from Week 2 to define cost per actual use
-  - gives one concrete before-class task and one in-class activity tied to the week's own mechanism
+  - turns a recurring charge into a yearly cost, not just the monthly or weekly figure
+  - explains forgetting to cancel and hard-to-cancel services as separate problems
+  - reuses the usable-quantity idea from Week 2 to find cost per actual use
+  - gives one concrete before-class task and one in-class activity tied to the week's topic
 related:
   - sessions/week-08
 ---
 
 ## Core question
 
-> Why does a small recurring price become difficult to reason about?
+> Why do small recurring prices add up so easily?
 
 $249 once is a single number you can hold in your head. $9.99 a month is
-not, because it requires multiplying by however long the subscription
-quietly continues — and that duration is exactly the number most people
-don't compute before signing up.
+harder, because you have to multiply it by however long the subscription
+keeps running. That is the number many people do not work out before they
+sign up.
 
 ## Introductory pricing and inertia
 
 A "$1 for the first month, then $14.99/month" offer is a reference-price
-problem (Week 3) applied over time instead of over a single sale badge: the
-attention-grabbing number is not the number you'll actually pay in most
-months. **Inertia** is what turns this into a recurring cost rather than a
-one-off mistake — cancelling requires a deliberate action, continuing
-requires none, so the default wins by default.
+problem (Week 3) stretched over time. The number that catches your eye is
+not the number you pay in most months. **Inertia** means people often keep
+paying because cancelling takes effort, while doing nothing lets the charge
+continue.
 
 ## Cancellation friction
 
-Some services make cancelling exactly as easy as subscribing. Many do not —
-a phone call, a support queue, a "are you sure?" flow designed to cost more
-attention than renewing. Friction is a cost, even though no price tag
-displays it; it belongs in the same ledger as the subscription fee itself.
+Some services make cancelling as easy as subscribing. Many do not. A phone
+call, support queue, or repeated "are you sure?" screen costs time and
+attention. That cost is not shown on the price tag, but it still belongs in
+the decision.
 
 ## Cost per actual use
 
 Week 2 separated quantity purchased from quantity used. The subscription
 version: a $14.99/month service used four times a month costs about $3.75
 per use; used once a month, it costs $14.99 per use. The subscription price
-is fixed; the cost per use is not, and it's the second number that should be
-compared against a one-off alternative.
+stays the same; the cost per use changes. That second number is the one to
+compare with a one-off alternative.
 
 ## The $249 headphones
 
 Suppose the headphones require a $3.99/month companion app subscription for
 noise-cancellation profile updates. Over two years that's roughly $96 — more
 than a third of the headphones' own price — turning a one-time $249 decision
-into a $249-plus-an-ongoing-fee decision that a sticker price never
-disclosed.
+into a $249 decision plus an ongoing fee that the sticker price does not
+show.
 
 <p class="caveat">The $3.99/month subscription is invented for this example.
 No real product's app pricing is being described.</p>
@@ -66,9 +66,10 @@ No real product's app pricing is being described.</p>
 
 By the end of this week, you should be able to:
 
-- convert a recurring charge into an annualised cost, not just the
-  per-period figure
-- distinguish inertia from cancellation friction as separate mechanisms
+- turn a recurring charge into a yearly cost, not just a monthly or weekly
+  cost
+- explain the difference between forgetting to cancel and being blocked by
+  a hard cancellation process
 - compute cost per actual use for a subscription, reusing Week 2's
   usable-quantity idea
 - identify an introductory-pricing offer as a reference-price problem
@@ -89,13 +90,14 @@ fixed price, what price would make it the better choice?
 
 ## What you should leave knowing
 
-A recurring price is a one-off price multiplied by however long inertia
-lets it continue; the number that should be compared against an
-alternative is cost per use, not cost per period.
+A recurring price is a one-off price multiplied by time. To compare it
+fairly with another option, use cost per actual use, not just cost per
+month.
 
 <hr class="receipt-divider" />
 
 ## Where this goes
 
 Week 8 looks at loyalty points: money-like numbers that come back from a
-purchase, and asks whether they're worth what they claim to be worth.
+purchase, and asks whether they are really worth the amount shown in the
+headline.
