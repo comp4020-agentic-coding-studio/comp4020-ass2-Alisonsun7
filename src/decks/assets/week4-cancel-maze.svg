@@ -1,0 +1,18 @@
+<svg width="480" height="640" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+  <pattern id="h8" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="8" cy="8" r="3" fill="#2a2118" opacity="0.1" />
+  </pattern></defs>
+    <rect width="480" height="640" fill="#fbf6ec" />
+    <rect x="216" y="396.8" width="264" height="243.2" fill="url(#h8)" />
+    <rect x="10" y="10" width="460" height="620" fill="none" stroke="#2a2118" stroke-width="8" rx="14" />
+    <rect x="130" y="110" width="220" height="60" rx="10" fill="#16a34a" stroke="#2a2118" stroke-width="6" />
+    <text x="240" y="148" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="20" fill="#fbf6ec" text-anchor="middle">SUBSCRIBE</text>
+    <path d="M 240 170 C 120 220, 380 260, 140 320 C -20 360, 400 380, 200 440 C 60 480, 360 480, 300 540"
+          fill="none" stroke="#6b6154" stroke-width="6" stroke-dasharray="2 14" stroke-linecap="round" />
+    <rect x="250" y="550" width="120" height="46" rx="8" fill="#fbf6ec" stroke="#2a2118" stroke-width="5" />
+    <text x="310" y="580" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#6b6154" text-anchor="middle">cancel</text>
+    <text x="240" y="40" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#8a5c13" text-anchor="middle">one click in</text>
+    <text x="240" y="615" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="14" fill="#8a5c13" text-anchor="middle">many clicks out</text>
+  </svg>

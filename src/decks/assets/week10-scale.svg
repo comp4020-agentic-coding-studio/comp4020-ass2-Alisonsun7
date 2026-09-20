@@ -1,0 +1,28 @@
+<svg width="480" height="640" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+  <pattern id="h13" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="8" cy="8" r="3" fill="#2a2118" opacity="0.1" />
+  </pattern></defs>
+    <rect width="480" height="640" fill="#fbf6ec" />
+    <rect x="216" y="0" width="264" height="256" fill="url(#h13)" />
+    <rect x="10" y="10" width="460" height="620" fill="none" stroke="#2a2118" stroke-width="8" rx="14" />
+    <line x1="240" y1="150" x2="240" y2="380" stroke="#2a2118" stroke-width="12" />
+    <polygon points="240,140 260,170 220,170" fill="#2a2118" />
+    <line x1="110" y1="230" x2="370" y2="200" stroke="#2a2118" stroke-width="10" />
+    <g transform="translate(130 230)">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#2a2118" stroke-width="6" />
+      <path d="M -55 60 Q 0 110 55 60 Z" fill="#b97d1c" stroke="#2a2118" stroke-width="6" />
+      <text x="0" y="145" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="18" fill="#8a5c13" text-anchor="middle">WAIT</text>
+    </g>
+    <g transform="translate(350 200)">
+      <line x1="0" y1="0" x2="0" y2="60" stroke="#2a2118" stroke-width="6" />
+      <path d="M -60 60 Q 0 118 60 60 Z" fill="#16a34a" stroke="#2a2118" stroke-width="6" />
+      <text x="0" y="145" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="16" fill="#16a34a" text-anchor="middle">BUY NOW</text>
+    </g>
+    <g transform="translate(350 240)">
+      <rect x="-16" y="0" width="32" height="32" fill="#a8402a" stroke="#2a2118" stroke-width="4" />
+      <text x="0" y="22" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="10" fill="#fbf6ec" text-anchor="middle">sunk</text>
+    </g>
+    <text x="240" y="470" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#8a5c13" text-anchor="middle">one side has a thumb on it</text>
+  </svg>

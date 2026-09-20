@@ -1,0 +1,24 @@
+<svg width="480" height="640" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+  <pattern id="h7" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="8" cy="8" r="3" fill="#2a2118" opacity="0.1" />
+  </pattern></defs>
+    <rect width="480" height="640" fill="#fbf6ec" />
+    <rect x="216" y="0" width="264" height="256" fill="url(#h7)" />
+    <rect x="10" y="10" width="460" height="620" fill="none" stroke="#2a2118" stroke-width="8" rx="14" />
+    <rect x="150" y="140" width="180" height="150" rx="18" fill="#6b6154" stroke="#2a2118" stroke-width="7" />
+    <circle cx="200" cy="200" r="18" fill="#fbf6ec" stroke="#2a2118" stroke-width="5" />
+    <circle cx="280" cy="200" r="18" fill="#fbf6ec" stroke="#2a2118" stroke-width="5" />
+    <circle cx="200" cy="200" r="6" fill="#2a2118" />
+    <circle cx="280" cy="200" r="6" fill="#2a2118" />
+    <rect x="185" y="250" width="110" height="16" rx="8" fill="#2a2118" />
+    <line x1="240" y1="140" x2="240" y2="100" stroke="#2a2118" stroke-width="8" />
+    <circle cx="240" cy="90" r="12" fill="#a8402a" stroke="#2a2118" stroke-width="5" />
+    <line x1="330" y1="220" x2="400" y2="260" stroke="#2a2118" stroke-width="10" stroke-linecap="round" />
+    <circle cx="400" cy="330" r="70" fill="#fbf6ec" stroke="#2a2118" stroke-width="7" />
+    <line x1="400" y1="330" x2="400" y2="278" stroke="#b97d1c" stroke-width="6" transform="rotate(40 400 330)" />
+    <line x1="400" y1="270" x2="400" y2="260" stroke="#2a2118" stroke-width="3" /><line x1="442.42640687119285" y1="287.57359312880715" x2="449.49747468305833" y2="280.50252531694167" stroke="#2a2118" stroke-width="3" /><line x1="460" y1="330" x2="470" y2="330" stroke="#2a2118" stroke-width="3" /><line x1="442.42640687119285" y1="372.42640687119285" x2="449.49747468305833" y2="379.49747468305833" stroke="#2a2118" stroke-width="3" /><line x1="400" y1="390" x2="400" y2="400" stroke="#2a2118" stroke-width="3" />
+    <text x="400" y="430" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="12" fill="#8a5c13" text-anchor="middle">YOUR PRICE</text>
+    <text x="240" y="540" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="15" fill="#8a5c13" text-anchor="middle">same seat, different price, different screen</text>
+  </svg>

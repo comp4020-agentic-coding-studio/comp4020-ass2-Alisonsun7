@@ -1,6 +1,6 @@
 ---
 title: "Lecture 4 — Should You Wait?"
-description: Waiting for a better price is a bet with a computable expected value, not a guess.
+description: Waiting for a better price is a bet you can calculate roughly, not a guess.
 ---
 
 {/* _class: impact */}
@@ -15,10 +15,10 @@ SLOP3746 · Week 10
 
 ## Today's question
 
-> When does waiting for a better price become rational?
+> When does it make sense to wait for a better price?
 
-By the end of this lecture: when the expected saving clears a bar you set
-*before* you know the outcome — not after.
+By the end of this lecture: when the expected saving is bigger than the
+costs of waiting, using a rule you set before you know the outcome.
 
 ---
 
@@ -41,15 +41,15 @@ context. Put together: next month's price for this item is not a fixed
 fact waiting to be discovered. It depends on demand, stock, season, and
 decisions nobody's made yet.
 
-This course does not claim to predict it. It claims something weaker and
-more useful: it can be **estimated**.
+This course does not claim to predict it. It claims something simpler and
+more useful: you can make a reasonable estimate.
 
 ---
 
 {/* _class: quote */}
 
-> Not knowable. Estimable. Those are different claims, and only one of
-> them is honest.
+> You cannot know the future price. You can only estimate it. Those are
+> different claims.
 
 ---
 
@@ -85,6 +85,8 @@ A saving you never get to collect is worth exactly nothing, no matter how
 large the discount would have been.
 
 ---
+
+![bg right:38%](./assets/week10-clock-price.svg)
 
 ## Urgency cost
 
@@ -181,8 +183,8 @@ estimate is reasonable.
 Two buyers can face the identical $20 expected saving and reasonably
 disagree about waiting: one is comfortable with a 60% chance of getting
 nothing extra, the other isn't. Expected value tells you the average
-outcome across many repeated bets — it doesn't tell you how much a single
-person should mind the variance around it.
+outcome across many repeated bets — it doesn't tell you how much one buyer
+should mind the spread of possible outcomes.
 
 Risk tolerance is a stated assumption, not something the formula supplies.
 
@@ -209,14 +211,13 @@ system that reaches BUY NOW, WAIT, or another recommendation and can
 
 ## Decision threshold: buy now vs wait
 
-A simple, statable rule: wait only if
+A simple clear rule: wait only if
 
 `expected saving > stock-out risk + urgency cost + attention cost`
 
-all measured in the same units, and all honestly estimated by the buyer
-rather than assumed away. Change any one input and the recommendation can
-flip — which is the entire point of writing it as a threshold rather than
-a feeling.
+all measured in the same units, and all honestly estimated by the buyer.
+Change any one input and the recommendation can flip — which is the point
+of writing it as a clear rule rather than a feeling.
 
 ---
 
@@ -244,14 +245,88 @@ answer changes with it.
 
 ---
 
-## Summary: waiting is rational only under stated assumptions
+## Summary: waiting only works under stated assumptions
 
-- waiting is a bet with a computable expected value, not a guarantee
+- waiting is a bet with an expected value you can calculate, not a guarantee
 - expected saving = probability × discount size, always
 - stock-out risk, urgency, and attention cost all belong on the other
   side of the ledger
 - this course never claims to predict a real future price — only to
   reason honestly about an estimate of one
+
+---
+
+## One more distortion, previewed
+
+Everything today assumed you're deciding cleanly between buy-now and wait,
+with nothing already spent pulling on the answer. That assumption breaks the
+moment money is already down — which is exactly next week's topic.
+
+---
+
+![bg left:38%](./assets/week10-sunk-hole.svg)
+
+## The sunk cost effect
+
+Arkes and Blumer named and measured a bias with a simple shape: people are
+more likely to continue an endeavour once money, effort or time has already
+gone into it — even when that spending cannot be recovered and has no bearing
+on what happens next.
+
+> Arkes, H. R., & Blumer, C. (1985). The Psychology of Sunk Cost.
+> *Organizational Behavior and Human Decision Processes*, 35(1), 124–140.
+
+Applied to waiting: money already spent researching, tracking, or nearly
+buying this item is real, but it is *sunk* — it changes nothing about
+whether waiting further is still the better bet from here.
+
+---
+
+## Their field evidence
+
+Arkes and Blumer ran a real field study at Ohio University's theatre season:
+patrons who happened to buy season tickets at a discount attended fewer
+plays over the season than patrons who paid full price for the identical
+tickets — despite owning an identical product. A companion questionnaire
+study found people who imagined already paying for a nonrefundable ski trip
+were more likely to say they'd go anyway through unpleasant conditions,
+citing "not wanting to waste the money" already spent.
+
+Neither group's future enjoyment changed. Only the sunk amount did.
+
+---
+
+![bg right:38%](./assets/week10-wine-invest.svg)
+
+## Thaler's wine, reframed
+
+Richard Thaler and Eldar Shafir studied a related twist: shoppers who buy a
+case of wine as an "investment," then drink a bottle years later once its
+market value has risen, often describe the drinking as *free* — or even as
+saving money — rather than as spending the bottle's current value.
+
+> Shafir, E., & Thaler, R. H. (2006). Invest now, drink later, spend never:
+> On the mental accounting of delayed consumption. *Journal of Economic
+> Psychology*, 27(5), 694–712.
+
+The same $249 already spent researching a "maybe wait" decision can get the
+same free-feeling treatment — it's gone either way, but it doesn't feel gone
+the same way to the person who spent it.
+
+---
+
+![bg left:38%](./assets/week10-scale.svg)
+
+## Why this belongs on today's ledger
+
+Today's decision threshold —
+
+`expected saving > stock-out risk + urgency cost + attention cost`
+
+— has no room for "but I already spent time on this." That's deliberate: a
+sunk cost is not a real cost of waiting *or* of buying, so a rule that lets
+it onto either side of the ledger is a rule already bent by the money that's
+gone. Next week asks how much that bend actually costs.
 
 ---
 

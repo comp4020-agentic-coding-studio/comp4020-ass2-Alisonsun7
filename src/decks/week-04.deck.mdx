@@ -1,6 +1,6 @@
 ---
 title: "Lecture 3 — Coupons Are Algorithms"
-description: Thresholds, exclusions, stacking and bundles, modelled as functions rather than tricks.
+description: Thresholds, exclusions, stacking and bundles, treated as rules rather than tricks.
 ---
 
 {/* _class: impact */}
@@ -17,15 +17,15 @@ SLOP3746 · Week 4
 
 > When discounts have rules, how should they be combined?
 
-By the end of this lecture: by treating each rule as a small function, and
-checking the total, not the badge.
+By the end of this lecture: by treating each discount as a rule to work
+through, and checking the final total, not the badge.
 
 ---
 
 ## Why coupon rules are algorithms
 
 A single reference price (Week 3) is one comparison. A real cart usually has
-several discount mechanisms active at once, each with its own condition.
+several discount rules active at once, each with its own condition.
 
 That's not a pile of marketing tricks. It's a small program:
 
@@ -46,7 +46,7 @@ the same number:
 - "20% off, excludes sale items" depends on what's *left* after exclusions
 
 The badge tells you the rule. It doesn't tell you the result. You have to
-compute the result.
+work out the result.
 
 ---
 
@@ -59,8 +59,8 @@ compute the result.
 - spend $51 → the rule fires → $10 off, and you paid $1 for headroom you
   didn't need
 
-A threshold is a step function, not a slope. Being just under it and just
-over it are wildly different outcomes for a tiny difference in spend.
+A threshold changes suddenly, not gradually. Being just under it and just
+over it can produce very different outcomes for a tiny difference in spend.
 
 ---
 
@@ -75,6 +75,8 @@ is worth roughly half of what its headline number suggests.
 Read the exclusion list before you read the percentage.
 
 ---
+
+![bg right:38%](./assets/week4-coupon-stack.svg)
 
 ## Stacking rules
 
@@ -91,8 +93,8 @@ There is no universal answer. There is only the actual rule text.
 
 {/* _class: quote */}
 
-> Read the rule the way you'd read a function's documentation before
-> calling it — not the way you'd read an advertisement.
+> Read the rule like instructions you have to follow — not like an
+> advertisement.
 
 ---
 
@@ -112,8 +114,8 @@ all.
 
 **"Free shipping over $75."**
 
-Structurally identical to a spend threshold, except the "discount" is a
-fee waiver rather than a dollar amount. The same trap applies: adding a
+This works like a spend threshold, except the "discount" is a fee waiver
+rather than a dollar amount. The same trap applies: adding a
 $10 item to clear a $75 threshold only makes sense if that item is worth
 more to you than the shipping fee it waives.
 
@@ -121,19 +123,19 @@ more to you than the shipping fee it waives.
 
 ## Cart state as input
 
-Every rule above reads from the same object: the current cart. Model it as
-a small state:
+Every rule above reads from the same thing: the current cart. Treat that
+cart as a small set of facts:
 
 - **subtotal** — total before any rule applies
 - **categories** — which items are excluded, which aren't
 - **quantities** — thresholds care about totals, not item counts
 - **applied rules so far** — because stacking rules depend on order
 
-A coupon rule is a function of this state, not of the badge printed on it.
+A coupon rule uses these facts, not just the badge printed on it.
 
 ---
 
-## Coupon rules as functions
+## Coupon rules as steps
 
 In plain terms, every rule on the last few slides has the same shape:
 
@@ -141,13 +143,12 @@ In plain terms, every rule on the last few slides has the same shape:
 rule(cart) → discount, or refusal
 ```
 
-- **input:** the cart state above
+- **input:** the cart facts above
 - **condition:** the rule's threshold, exclusion, or stacking clause
 - **output:** either a discount amount, or nothing at all
 
-Optimising a cart means finding the cart state that makes the *sum* of
-these functions as favourable as possible — not maximising any single
-rule in isolation.
+Solving a cart means finding the version of the cart that gives the best
+final total — not chasing one impressive-looking rule on its own.
 
 ---
 
@@ -236,12 +237,12 @@ every time, rather than assume.
 ## How Assessment 2 uses this reasoning
 
 **Beat the Shopping Cart** hands you a constrained scenario with several
-of these mechanisms active at once — thresholds, exclusions, stacking,
-loyalty rewards — and asks for a defensible strategy, not a guess.
+of these rules active at once — thresholds, exclusions, stacking, loyalty
+rewards — and asks for a clear strategy, not a guess.
 
-Reasoning about constraints and effective cost is exactly what's marked.
-An unnecessary purchase that technically unlocks a bigger badge is exactly
-what isn't rewarded.
+The marking focuses on the rules and the real final cost. An unnecessary
+purchase that technically unlocks a bigger badge is exactly what is not
+rewarded.
 
 ---
 
@@ -274,9 +275,9 @@ The right answer depends on whether the case and cable were wanted at all
 
 ---
 
-## Summary: optimisation, not tricks
+## Summary: rules, not tricks
 
-- every discount rule is a function: cart in, discount or refusal out
+- every discount rule has inputs: cart in, discount or refusal out
 - read the actual condition, not the badge
 - compute the applicable subtotal, not the full subtotal
 - a rule that requires spending more only helps if the extra spend was
@@ -284,8 +285,86 @@ The right answer depends on whether the case and cable were wanted at all
 
 ---
 
+## Coupons aren't the only rule-based price
+
+Coupons are the easiest rule to see, because the rule is printed on the
+badge. The same "cart in, discount or refusal out" logic runs underneath
+loyalty points, subscriptions and dynamic pricing — usually with the rule
+kept less visible, not more.
+
+---
+
+![bg left:38%](./assets/week4-points-jar.svg)
+
+## Loyalty points are a rule, not a gift
+
+A points program is a coupon with a delay: "spend now, get a discount rule
+that only fires later, in a currency the retailer controls." The retailer
+sets the exchange rate, the expiry, and which purchases even qualify — all
+after you've already paid.
+
+Treat accumulated points the same way you'd treat any other conditional
+discount: worth exactly what you can actually redeem, not their sticker
+value.
+
+---
+
+![bg right:38%](./assets/week4-cancel-maze.svg)
+
+## Subscriptions: easy to start, a maze to leave
+
+Many subscription flows make joining a single click and cancelling a
+multi-step process — a real, regulator-documented pattern, not a hypothetical
+one:
+
+> The U.S. Federal Trade Commission finalised its "click to cancel" rule
+> (16 CFR Part 425) on 16 October 2024, requiring cancellation to be at least
+> as easy as sign-up. A federal appeals court vacated the rule in 2025 on
+> procedural grounds, so it is not currently in force — but the underlying
+> pattern it targeted is well documented.
+
+The rule's legal status can change; the underlying cart-exit-friction pattern
+is the thing to keep watching for regardless.
+
+---
+
+## Drip pricing and "junk fees"
+
+The exclusion and threshold rules from earlier in this lecture have a fee
+version: charges that appear only at checkout, after the headline price has
+already anchored you.
+
+> The FTC's "Rule on Unfair or Deceptive Fees" was finalised in December 2024
+> (a 4–1 commission vote) and required total price disclosure, including
+> mandatory fees, up front; enforcement began 12 May 2025.
+
+Same lesson as a coupon exclusion: read the applicable total, not the
+headline number, before you decide the badge is honest.
+
+---
+
+![bg left:38%](./assets/week4-robot-dial.svg)
+
+## When the "rule" adjusts itself
+
+Every rule so far is fixed in advance. Dynamic and personalised pricing lets
+the retailer's system adjust the rule per customer, per moment:
+
+> In 2025, Delta Air Lines expanded AI-driven fare pricing built with the
+> startup Fetcherr, moving from roughly 3% of domestic pricing toward a
+> stated goal of 20% of flights by the end of 2025 — prompting public and
+> lawmaker criticism that the practice could amount to personalised,
+> less transparent pricing. Separately, Australia's ACCC named algorithmic
+> pricing transparency a priority area for 2025.
+
+The coupon-reading habit from this lecture still applies: the "rule" still
+takes cart-like inputs and returns a price, it's just that you can no longer
+see the rule, or confirm it's the same one another shopper was shown.
+
+---
+
 {/* _class: impact */}
 
 # Next week: is $249
 # even the right number
-# to be optimising?
+# to focus on?

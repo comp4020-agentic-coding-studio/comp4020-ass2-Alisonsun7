@@ -1,0 +1,22 @@
+<svg width="480" height="640" viewBox="0 0 480 640" xmlns="http://www.w3.org/2000/svg">
+    
+    <defs>
+  <pattern id="h4" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="8" cy="8" r="3" fill="#2a2118" opacity="0.1" />
+  </pattern></defs>
+    <rect width="480" height="640" fill="#fbf6ec" />
+    <rect x="216" y="0" width="264" height="256" fill="url(#h4)" />
+    <rect x="10" y="10" width="460" height="620" fill="none" stroke="#2a2118" stroke-width="8" rx="14" />
+    <rect x="90" y="200" width="300" height="200" rx="10" fill="#2a2118" />
+    <rect x="106" y="216" width="268" height="168" rx="4" fill="#16a34a" opacity="0.18" />
+    <text x="240" y="280" font-family="Helvetica, Arial, sans-serif" font-weight="900" font-size="30" fill="#fbf6ec" text-anchor="middle">SLOP3746</text>
+    <text x="240" y="320" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="15" fill="#fbf6ec" text-anchor="middle">How to Never Pay Full Price</text>
+    <g stroke="#fbf6ec" stroke-width="4" fill="none">
+      <path d="M 130 350 L 190 350" />
+      <path d="M 210 350 L 290 350" />
+      <path d="M 310 350 L 350 350" />
+    </g>
+    <rect x="150" y="440" width="180" height="120" fill="#8a5c13" stroke="#2a2118" stroke-width="7" />
+    <rect x="150" y="440" width="180" height="18" fill="#b97d1c" stroke="#2a2118" stroke-width="4" />
+    <text x="240" y="520" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="13" fill="#fbf6ec" text-anchor="middle">LECTURN</text>
+  </svg>
