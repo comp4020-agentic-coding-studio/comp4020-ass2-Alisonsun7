@@ -12,7 +12,13 @@ const weightedMarking = z
   .object({
     mode: z.literal("weighted"),
     criteria: z
-      .array(z.object({ name: z.string().trim().min(1), weight: z.number().positive() }))
+      .array(
+        z.object({
+          name: z.string().trim().min(1),
+          weight: z.number().positive(),
+          description: z.string().trim().min(20).optional(),
+        }),
+      )
       .min(1),
   })
   .superRefine((marking, ctx) => {

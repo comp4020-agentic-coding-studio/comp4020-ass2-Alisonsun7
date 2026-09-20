@@ -1,7 +1,7 @@
 ---
 interface WeightedMarking {
   mode: "weighted";
-  criteria: { name: string; weight: number }[];
+  criteria: { name: string; weight: number; description?: string }[];
 }
 
 interface HolisticMarking {
@@ -14,6 +14,7 @@ interface Props {
 }
 
 const { marking } = Astro.props;
+const showDescriptions = marking.mode === "weighted" && marking.criteria.some((criterion) => criterion.description);
 ---
 
 <section aria-labelledby="how-marked">
@@ -22,10 +23,20 @@ const { marking } = Astro.props;
     <p>{marking.description}</p>
   ) : (
     <table>
-      <thead><tr><th scope="col">Criterion</th><th scope="col">Weight</th></tr></thead>
+      <thead>
+        <tr>
+          <th scope="col">Criterion</th>
+          {showDescriptions && <th scope="col">What markers look for</th>}
+          <th scope="col">Weight</th>
+        </tr>
+      </thead>
       <tbody>
         {marking.criteria.map((criterion) => (
-          <tr><td>{criterion.name}</td><td>{criterion.weight}%</td></tr>
+          <tr>
+            <td>{criterion.name}</td>
+            {showDescriptions && <td>{criterion.description}</td>}
+            <td>{criterion.weight}%</td>
+          </tr>
         ))}
       </tbody>
     </table>
